@@ -7,7 +7,8 @@ public:
 	//ステータス
 	enum class STATUS
 	{
-		WAIT
+		WAIT,
+		WALK
 	};
 	Player();
 	virtual ~Player();
@@ -17,5 +18,6 @@ public:
 protected:
 	//ステータス
 	STATUS _status;
+	int mCg;
 };
 

@@ -30,7 +30,7 @@ void ObjectManager::Process()
 		//オブジェクトのプロセス
 		object->Process();
 		//消去フラグがtrueになったならそのオブジェクトを一時的なコンテナに入れる
-		if (object->GetDeleteFlag()) { temp_remove.push_back(object);}
+		if (object->GetState() == ObjectBase::State::DEAD) { temp_remove.push_back(object); }
 	}
 	//一時的なコンテナの中身を削除する
 	for (auto&& object : temp_remove)

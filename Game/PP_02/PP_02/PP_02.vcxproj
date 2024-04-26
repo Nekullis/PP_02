@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\ModeGame.cpp" />
+    <ClCompile Include="source\Component.cpp" />
     <ClCompile Include="source\ApplicationBase.cpp" />
     <ClCompile Include="source\ApplicationGlobal.cpp" />
     <ClCompile Include="source\ApplicationMain.cpp" />
@@ -40,6 +42,8 @@
     <ClCompile Include="source\WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\ModeGame.h" />
+    <ClInclude Include="source\Component.h" />
     <ClInclude Include="source\ApplicationBase.h" />
     <ClInclude Include="source\ApplicationGlobal.h" />
     <ClInclude Include="source\ApplicationMain.h" />
