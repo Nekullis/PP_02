@@ -5,6 +5,7 @@ Player::Player():chara()
 	_status = STATUS::WAIT;
 	//‰æ‘œ‚Ìƒ[ƒh
 	mCg = LoadGraph(_T("res/key1.png"));
+	
 
 }
 
@@ -19,6 +20,7 @@ void Player::Initialize()
 void Player::Process()
 {
 	_status = STATUS::WALK;
+
 }
 
 void Player::Render()

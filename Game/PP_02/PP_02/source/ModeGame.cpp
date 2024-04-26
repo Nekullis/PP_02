@@ -1,6 +1,7 @@
 #include "ModeGame.h"
 #include "Player.h"
 #include "Component.h"
+#include "MoveComponent.h"
 bool ModeGame::Initialize()
 {
 	mManager = new ObjectManager();
@@ -13,6 +14,8 @@ bool ModeGame::Initialize()
 	player->AddComponent(component_2);
 	Component* component_3 = new Component(player, 11);
 	player->AddComponent(component_3);
+	MoveComponent* move = new MoveComponent(player, 12);
+	player->AddComponent(move);
 	mManager->Spawn(player);
 
 	return true;
