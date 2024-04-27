@@ -23,12 +23,15 @@ void ObjectBase::Initialize()
 
 void ObjectBase::Process()
 {
-
+	for(auto&& comp : mComponents)
+	{
+		comp->Update();
+	}
 }
 
 void ObjectBase::Render()
 {
-
+	
 #if _DEBUG
 	Debug();
 #endif
