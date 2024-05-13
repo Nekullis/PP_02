@@ -41,6 +41,7 @@
     <ClCompile Include="source\Player.cpp" />
     <ClCompile Include="source\Vector3D.cpp" />
     <ClCompile Include="source\WinMain.cpp" />
+    <ClCompile Include="source\Stage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\MoveComponent.h" />
@@ -64,6 +65,7 @@
     <ClInclude Include="source\ObjectManager.h" />
     <ClInclude Include="source\Player.h" />
     <ClInclude Include="source\Vector3D.h" />
+    <ClInclude Include="source\Stage.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
