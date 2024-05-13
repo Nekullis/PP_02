@@ -44,7 +44,9 @@ void ObjectBase::Debug()
 
 void ObjectBase::AddComponent(Component* component)
 {
+	//ƒRƒ“ƒeƒi‚ÉŠi”[‚·‚é
 	mComponents.push_back(component);
+	//Ši”[‚µ‚½ƒRƒ“ƒ|[ƒlƒ“ƒg‚Ì•À‚Ñ‘Ö‚¦
 	std::sort(mComponents.begin(), mComponents.end(), [](Component* a, Component* b) {return a->GetUpdateOwder() < b->GetUpdateOwder(); });
 }
 
