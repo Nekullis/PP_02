@@ -21,7 +21,9 @@ public:
 	virtual void Process();
 	virtual void Render();
 	virtual void Debug();
+	//コンポーネント追加
 	void AddComponent(class Component* component);
+	//コンポーネント削除
 	void RemoveComponent(class Component* component);
 	//ゲッター
 	Vector3D GetPos() { return _vPos; }
