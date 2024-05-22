@@ -8,6 +8,12 @@ MyMath::~MyMath()
 {
 }
 
+bool MyMath::NearZero(double vol, double epsiron)
+{
+	if (fabs(vol) <= epsiron) { return true; }
+	else { return false; }
+}
+
 float MyMath::DisPointAndLine(Vector3D& v1, Vector3D& v2s, Vector3D& v2e, Vector3D& mp, double& t)
 {
 	//v1:“_‚ÌˆÊ’u

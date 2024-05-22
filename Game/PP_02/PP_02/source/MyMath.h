@@ -16,6 +16,8 @@ public:
 	//rad->degree
 	template<typename T>
 	static T RadToDeg(T rad) { return rad * 180.0 / PI; }
+	//”÷¬‚È’l‚Æ‚Ì”äŠr
+	static bool NearZero(double vol, double epsiron = 0.001);
 	//Å’Z‹——£Œn
 	//“_‚Æ’¼ü‚ÌÅ’Z‹——£
 	static float DisPointAndLine(Vector3D& v1, Vector3D& v2s, Vector3D& v2e, Vector3D& mp, double& t);
