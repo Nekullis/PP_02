@@ -4,9 +4,11 @@
 ObjectBase::ObjectBase()
 {
 	//位置
-	_vPos = { 0 };
+	mPos = { 0 };
 	//角度
-	_vDir = { 0 };
+	mRotation = 0;
+	//スケール
+	mScale = 0;
 
 	Initialize();
 }
@@ -52,5 +54,8 @@ void ObjectBase::AddComponent(Component* component)
 
 void ObjectBase::RemoveComponent(Component* component)
 {
-
+	//条件に合うコンポーネントを探す
+	auto itr = std::find(mComponents.begin(), mComponents.end(), component);
+	//探したコンポーネントの消去
+	if (itr != mComponents.end()) { mComponents.erase(itr); }
 }

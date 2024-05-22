@@ -26,15 +26,22 @@ public:
 	//コンポーネント削除
 	void RemoveComponent(class Component* component);
 	//ゲッター
-	Vector3D GetPos() { return _vPos; }
+	Vector3D GetPos() { return mPos; }
+	float GetRotation() { return mRotation; }
+	float GetScale() { return mScale; }
 	State GetState() const { return mState; }
 	//セッター
-	void SetPos(const Vector3D& pos) { _vPos = pos; }
+	void SetPos(const Vector3D& pos) { mPos = pos; }
+	void SetRotation(float rot) { mRotation = rot; }
+	void SetScale(float scale) { mScale = scale; }
+	void SetState(State state) { mState = state; }
 protected:
 	//位置
-	Vector3D _vPos;
+	Vector3D mPos;
 	//角度
-	Vector3D _vDir;
+	float mRotation;
+	//スケール
+	float mScale;
 	//状態
 	State mState;
 	//コンポーネント

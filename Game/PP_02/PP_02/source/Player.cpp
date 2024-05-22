@@ -26,5 +26,5 @@ void Player::Render()
 {
 	chara::Render();
 	//‰æ‘œ•`‰æ
-	DrawGraph(_vPos._x, _vPos._y, mCg, TRUE);
+	DrawGraph(mPos._x, mPos._y, mCg, TRUE);
 }
