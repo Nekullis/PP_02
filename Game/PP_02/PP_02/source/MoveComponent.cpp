@@ -12,12 +12,15 @@ MoveComponent::~MoveComponent()
 
 }
 
-void MoveComponent::Update()
+void MoveComponent::Update(float deltatime)
 {
-	Component::Update();
-	if (MyMath::NearZero(mAngularSpeed))
+	Component::Update(deltatime);
+	if (!MyMath::NearZero(mAngularSpeed))
 	{
-		
+		//ƒeƒXƒg
+		float rot = mOwner->GetRotation();
+		rot += mAngularSpeed * deltatime;
+		mOwner->SetRotation(rot);
 	}
 	
 }

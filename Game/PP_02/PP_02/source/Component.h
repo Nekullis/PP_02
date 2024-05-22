@@ -6,7 +6,7 @@ public:
 	Component(class ObjectBase* owner, int updateowder = 100);
 	virtual ~Component();
 	//更新
-	virtual void Update();
+	virtual void Update(float deltatime);
 	//ゲッター
 	int GetUpdateOwder() const { return mUpdateOwder; }
 protected:

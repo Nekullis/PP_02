@@ -27,8 +27,8 @@ public:
 	void RemoveComponent(class Component* component);
 	//ゲッター
 	Vector3D GetPos() { return mPos; }
-	float GetRotation() { return mRotation; }
-	float GetScale() { return mScale; }
+	float GetRotation() const { return mRotation; }
+	float GetScale() const { return mScale; }
 	State GetState() const { return mState; }
 	//セッター
 	void SetPos(const Vector3D& pos) { mPos = pos; }

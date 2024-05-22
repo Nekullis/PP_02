@@ -58,8 +58,7 @@ Vector3D	Vector3D::operator*=(const Vector3D& right)
 	tmp._z = _z * right._z;
 	return tmp;
 }
-Vector3D	Vector3D::operator*=(const double right) 
-{
+Vector3D	Vector3D::operator*=(const double right) {
 	Vector3D tmp;
 	tmp._x = _x * right;
 	tmp._y = _y * right;
