@@ -30,7 +30,7 @@ public:
 	~GameXPad();
 	bool Input();
 	//入力されているか
-	bool IsInputStick(int i) const;
+	bool IsInputStick(int i);
 	//ゲッター
 	//ボタン
 	bool GetXKey(int index) { return _xInput.Buttons[index]; }
