@@ -7,11 +7,11 @@ public:
 	AIState(class AIComponent* owner);
 	virtual ~AIState();
 	//更新
-	void Update();
+	virtual void Update();
 	//遷移に入る際の処理
-	void OnEnter();
+	virtual void OnEnter();
 	//遷移から出る際の処理
-	void OnExit();
+	virtual void OnExit();
 	//名前取得
 	const char* GetName();
 protected:
