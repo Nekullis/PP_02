@@ -123,6 +123,9 @@
     <ClCompile Include="source\AIDeath.cpp">
       <Filter>ソース ファイル\AI</Filter>
     </ClCompile>
+    <ClCompile Include="source\AIAttack.cpp">
+      <Filter>ソース ファイル\AI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\CFile.h">
@@ -198,6 +201,9 @@
       <Filter>ヘッダー ファイル\AI</Filter>
     </ClInclude>
     <ClInclude Include="source\AIState.h">
+      <Filter>ヘッダー ファイル\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="source\AIAttack.h">
       <Filter>ヘッダー ファイル\AI</Filter>
     </ClInclude>
   </ItemGroup>
