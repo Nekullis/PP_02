@@ -7,13 +7,13 @@ public:
 	AIState(class AIComponent* owner);
 	virtual ~AIState();
 	//更新
-	virtual void Update();
+	virtual void Update(float deltatime);
 	//遷移に入る際の処理
 	virtual void OnEnter();
 	//遷移から出る際の処理
 	virtual void OnExit();
 	//名前取得
-	const char* GetName();
+	virtual const char* GetName();
 protected:
 	//使うコンポーネント
 	class AIComponent* mOwner;

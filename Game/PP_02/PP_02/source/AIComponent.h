@@ -9,12 +9,12 @@ public:
 	//更新
 	void Update(float deltatime) override;
 	//状態変更
-	void ChangeState(const std::string& state);
+	void ChangeState(const std::string& name);
 	//状態の登録
 	void RegisterState(class AIState* state);
 private:
 	//インスタンスの紐付け
-	std::unordered_map < std::string, class AIState* > mStateMap;
+	std::unordered_map <std::string, class AIState*> mStateMap;
 	//現在の状態
 	class AIState* mState;
 };
