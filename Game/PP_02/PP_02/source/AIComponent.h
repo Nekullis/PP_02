@@ -1,5 +1,6 @@
 #pragma once
 #include "Component.h"
+#include <unordered_map>
 class AIComponent : public Component
 {
 public:
@@ -7,5 +8,14 @@ public:
 	virtual ~AIComponent();
 	//更新
 	void Update(float deltatime) override;
+	//状態変更
+	void ChangeState(const std::string& state);
+	//状態の登録
+	void RegisterState(class AIState* state);
+private:
+	//インスタンスの紐付け
+	std::unordered_map < std::string, class AIState* > mStateMap;
+	//現在の状態
+	class AIState* mState;
 };
 

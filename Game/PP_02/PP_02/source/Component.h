@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 //コンポーネント(構成要素)の親クラス
 class Component
 {
