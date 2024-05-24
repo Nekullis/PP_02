@@ -23,6 +23,7 @@
     <ClCompile Include="source\AIDeath.cpp" />
     <ClCompile Include="source\AIState.cpp" />
     <ClCompile Include="source\AIComponent.cpp" />
+    <ClCompile Include="source\AIVigilance.cpp" />
     <ClCompile Include="source\MoveComponent.cpp" />
     <ClCompile Include="source\ModeGame.cpp" />
     <ClCompile Include="source\Component.cpp" />
@@ -52,6 +53,7 @@
     <ClInclude Include="source\AIDeath.h" />
     <ClInclude Include="source\AIState.h" />
     <ClInclude Include="source\AIComponent.h" />
+    <ClInclude Include="source\AIVigilance.h" />
     <ClInclude Include="source\MoveComponent.h" />
     <ClInclude Include="source\ModeGame.h" />
     <ClInclude Include="source\Component.h" />
