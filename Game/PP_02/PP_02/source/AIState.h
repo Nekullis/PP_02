@@ -13,7 +13,7 @@ public:
 	//遷移から出る際の処理
 	virtual void OnExit();
 	//名前取得
-	virtual const char* GetName();
+	virtual const char* GetName()const { return ""; }
 protected:
 	//使うコンポーネント
 	class AIComponent* mOwner;
