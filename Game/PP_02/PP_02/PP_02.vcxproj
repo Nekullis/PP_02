@@ -19,7 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\AIVigilance.cpp" />
+    <ClCompile Include="source\AIAttack.cpp" />
+    <ClCompile Include="source\AIDeath.cpp" />
     <ClCompile Include="source\AIState.cpp" />
     <ClCompile Include="source\AIComponent.cpp" />
     <ClCompile Include="source\MoveComponent.cpp" />
@@ -47,7 +48,8 @@
     <ClCompile Include="source\Stage.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\AIVigilance.h" />
+    <ClInclude Include="source\AIAttack.h" />
+    <ClInclude Include="source\AIDeath.h" />
     <ClInclude Include="source\AIState.h" />
     <ClInclude Include="source\AIComponent.h" />
     <ClInclude Include="source\MoveComponent.h" />
