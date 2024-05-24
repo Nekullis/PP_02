@@ -1,6 +1,6 @@
 #include "AIDeath.h"
 
-AIDeath::AIDeath(AIComponent* owner)
+AIDeath::AIDeath(AIComponent* owner): AIState(owner)
 {
 }
 
