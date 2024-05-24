@@ -26,7 +26,3 @@ void AIState::OnExit()
 
 }
 
-const char* AIState::GetName()
-{
-	return 0;
-}

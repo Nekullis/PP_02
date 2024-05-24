@@ -40,6 +40,9 @@
     <Filter Include="ソース ファイル\AI">
       <UniqueIdentifier>{2b2740c6-e5f9-4a50-9c60-ed0969153869}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\AI">
+      <UniqueIdentifier>{a4c0bb64-700e-46db-8332-8e7a5c7cedfe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\CFile.cpp">
@@ -117,6 +120,9 @@
     <ClCompile Include="source\AIState.cpp">
       <Filter>ソース ファイル\AI</Filter>
     </ClCompile>
+    <ClCompile Include="source\AIDeath.cpp">
+      <Filter>ソース ファイル\AI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\CFile.h">
@@ -188,8 +194,11 @@
     <ClInclude Include="source\AIComponent.h">
       <Filter>ヘッダー ファイル\Component</Filter>
     </ClInclude>
+    <ClInclude Include="source\AIDeath.h">
+      <Filter>ヘッダー ファイル\AI</Filter>
+    </ClInclude>
     <ClInclude Include="source\AIState.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ヘッダー ファイル\AI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
