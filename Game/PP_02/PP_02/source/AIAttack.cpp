@@ -1,6 +1,6 @@
 #include "AIAttack.h"
 
-AIAttack::AIAttack(AIComponent* owner)
+AIAttack::AIAttack(AIComponent* owner): AIState(owner)
 {
 }
 
