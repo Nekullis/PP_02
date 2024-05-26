@@ -126,6 +126,9 @@
     <ClCompile Include="source\AIAttack.cpp">
       <Filter>ソース ファイル\AI</Filter>
     </ClCompile>
+    <ClCompile Include="source\AIVigilance.cpp">
+      <Filter>ソース ファイル\AI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\CFile.h">
@@ -205,6 +208,9 @@
     </ClInclude>
     <ClInclude Include="source\AIAttack.h">
       <Filter>ヘッダー ファイル\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="source\AIVigilance.h">
+      <Filter>ヘッダー ファイル\Application</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
