@@ -6,7 +6,7 @@ public:
 	MoveComponent(class ObjectBase* owner, int updateowder = 10);
 	virtual ~MoveComponent();
 	//更新
-	void Update(float deltatime)override;
+	void Update()override;
 	//ゲッター
 	float GetAngularSpeed() const { return mAngularSpeed; }
 	float GetForwardSpeed() const { return mForwardSpeed; }

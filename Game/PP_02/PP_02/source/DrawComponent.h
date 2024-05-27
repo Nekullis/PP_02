@@ -6,7 +6,7 @@ public:
 	DrawComponent(class ObjectBase* owner, int updateowder = 100);
 	virtual ~DrawComponent();
 	//更新
-	void Update(float deltatime)override;
+	void Update()override;
 	//ゲッター
 	int GetHandle() const { return mHandle; }
 	//セッター

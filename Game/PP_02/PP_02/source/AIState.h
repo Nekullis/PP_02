@@ -7,7 +7,7 @@ public:
 	AIState(class AIComponent* owner);
 	virtual ~AIState();
 	//XV
-	virtual void Update(float deltatime);
+	virtual void Update();
 	//‘JˆÚ‚É“ü‚éÛ‚Ìˆ—
 	virtual void OnEnter();
 	//‘JˆÚ‚©‚ço‚éÛ‚Ìˆ—

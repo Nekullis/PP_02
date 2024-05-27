@@ -1,5 +1,4 @@
 #pragma once
-#include "DxLib.h"
 #include "ObjectBase.h"
 #include <list>
 //オブジェクトの登録、消去などに関わるクラス

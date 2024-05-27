@@ -6,7 +6,7 @@ public:
 	AIAttack(class AIComponent* owner);
 	virtual ~AIAttack();
 	//XV
-	void Update(float deltatime);
+	void Update();
 	//‘JˆÚ‚É“ü‚éÛ‚Ìˆ—
 	void OnEnter();
 	//‘JˆÚ‚©‚ço‚éÛ‚Ìˆ—

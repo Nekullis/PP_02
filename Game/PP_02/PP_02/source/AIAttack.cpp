@@ -8,7 +8,7 @@ AIAttack::~AIAttack()
 {
 }
 
-void AIAttack::Update(float deltatime)
+void AIAttack::Update()
 {
 }
 

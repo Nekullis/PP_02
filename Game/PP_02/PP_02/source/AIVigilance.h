@@ -6,7 +6,7 @@ public:
 	AIVigilance(class AIComponent* owner);
 	virtual ~AIVigilance();
 	//XV
-	void Update(float deltatime)override;
+	void Update()override;
 	//‘JˆÚ‚É“ü‚éÛ‚Ìˆ—
 	void OnEnter()override;
 	//‘JˆÚ‚©‚ço‚éÛ‚Ìˆ—

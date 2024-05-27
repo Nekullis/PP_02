@@ -8,10 +8,10 @@ AIComponent::~AIComponent()
 {
 }
 
-void AIComponent::Update(float deltatime)
+void AIComponent::Update()
 {
 	//Œ»Ý‚Ìó‘Ô‚È‚ç‚ÎXV‚·‚é
-	if (mState) { mState->Update(deltatime); }
+	if (mState) { mState->Update();}
 	
 }
 

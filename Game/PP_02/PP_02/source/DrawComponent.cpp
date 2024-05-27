@@ -16,9 +16,9 @@ void DrawComponent::SetPass(std::string pass)
 	mHandle = MV1LoadModel((const TCHAR*)(mPass.c_str()));
 }
 
-void DrawComponent::Update(float deltatime)
+void DrawComponent::Update()
 {
-	Component::Update(deltatime);
+	Component::Update();
 	MV1DrawModel(mHandle);
 }
 

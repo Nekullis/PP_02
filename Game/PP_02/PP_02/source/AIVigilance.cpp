@@ -8,7 +8,7 @@ AIVigilance::~AIVigilance()
 {
 }
 
-void AIVigilance::Update(float deltatime)
+void AIVigilance::Update()
 {
 }
 

@@ -4,7 +4,12 @@ AIDeath::AIDeath(AIComponent* owner): AIState(owner)
 {
 }
 
-void AIDeath::Update(float deltatime)
+AIDeath::~AIDeath()
+{
+
+}
+
+void AIDeath::Update()
 {
 }
 

@@ -7,7 +7,7 @@ public:
 	AIComponent(class ObjectBase* owner, int updateowder = 10);
 	virtual ~AIComponent();
 	//XV
-	void Update(float deltatime) override;
+	void Update() override;
 	//ó‘Ô•ÏX
 	void ChangeState(const std::string& name);
 	//ó‘Ô‚Ì“o˜^

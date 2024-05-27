@@ -1,5 +1,4 @@
 #pragma once
-#include "Vector3D.h"
 #include <math.h>
 //ŒvZŠÖ˜AŠÖ”‚ğ‚Ü‚Æ‚ß‚½ƒNƒ‰ƒX
 class MyMath
@@ -20,16 +19,16 @@ public:
 	static bool NearZero(double vol, double epsiron = 0.001);
 	//Å’Z‹——£Œn
 	//“_‚Æ’¼ü‚ÌÅ’Z‹——£
-	static float DisPointAndLine(Vector3D& v1, Vector3D& v2s, Vector3D& v2e, Vector3D& mp, double& t);
+	static float DisPointAndLine(class Vector3D& v1, class Vector3D& v2s, class Vector3D& v2e, class Vector3D& mp, double& t);
 	//“_‚Æü•ª‚ÌÅ’Z‹——£
-	static float DisPointAndSegment(Vector3D& v1, Vector3D& v2s, Vector3D& v2e, Vector3D& mp, double& t);
+	static float DisPointAndSegment(class Vector3D& v1, class Vector3D& v2s, class Vector3D& v2e, class Vector3D& mp, double& t);
 	//’¼ü‚Æ’¼ü‚ÌÅ’Z‹——£
-	static float DisLineAndLine(Vector3D& v1s, Vector3D& v1e, Vector3D& v1m, double& t1, Vector3D& v2s, Vector3D& v2e, Vector3D& v2m, double& t2);
+	static float DisLineAndLine(class Vector3D& v1s, class Vector3D& v1e, class Vector3D& v1m, double& t1, class Vector3D& v2s, class Vector3D& v2e, class Vector3D& v2m, double& t2);
 	//ü•ª‚Æü•ª‚ÌÅ’Z‹——£
-	static float DisSegAndSeg(Vector3D& v1s, Vector3D& v1e, Vector3D& v1m, double& t1, Vector3D& v2s, Vector3D& v2e, Vector3D& v2m, double& t2);
+	static float DisSegAndSeg(class Vector3D& v1s, class Vector3D& v1e, class Vector3D& v1m, double& t1, class Vector3D& v2s, class Vector3D& v2e, class Vector3D& v2m, double& t2);
 	//“_‚ÆAABB‚ÌÅ’Z‹——£
-	static float DisPointAndAABB(Vector3D v1, double w1, double h1, double d1, Vector3D v2);
+	static float DisPointAndAABB(class Vector3D v1, double w1, double h1, double d1, class Vector3D v2);
 	//“–‚½‚è”»’èŒn
 	//“_‚ÆîŒ`‚Ì“–‚½‚è”»’è
-	static bool ColPointAndFan(Vector3D v1, Vector3D v2, float rad);
+	static bool ColPointAndFan(class Vector3D v1, class Vector3D v2, float rad);
 };

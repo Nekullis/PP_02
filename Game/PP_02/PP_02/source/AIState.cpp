@@ -11,7 +11,7 @@ AIState::~AIState()
 
 }
 
-void AIState::Update(float deltatime)
+void AIState::Update()
 {
 
 }
