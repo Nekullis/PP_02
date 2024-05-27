@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\DrawComponent.cpp" />
     <ClCompile Include="source\AIAttack.cpp" />
     <ClCompile Include="source\AIDeath.cpp" />
     <ClCompile Include="source\AIState.cpp" />
@@ -49,6 +50,7 @@
     <ClCompile Include="source\Stage.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\DrawComponent.h" />
     <ClInclude Include="source\AIAttack.h" />
     <ClInclude Include="source\AIDeath.h" />
     <ClInclude Include="source\AIState.h" />

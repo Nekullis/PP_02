@@ -129,6 +129,9 @@
     <ClCompile Include="source\AIVigilance.cpp">
       <Filter>ソース ファイル\AI</Filter>
     </ClCompile>
+    <ClCompile Include="source\DrawComponent.cpp">
+      <Filter>ソース ファイル\Component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\CFile.h">
@@ -211,6 +214,9 @@
     </ClInclude>
     <ClInclude Include="source\AIVigilance.h">
       <Filter>ヘッダー ファイル\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="source\DrawComponent.h">
+      <Filter>ヘッダー ファイル\Component</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
