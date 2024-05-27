@@ -2,22 +2,15 @@
 #include "Player.h"
 #include "Component.h"
 #include "MoveComponent.h"
+#include "DrawComponent.h"
+#include "Stage.h"
 bool ModeGame::Initialize()
 {
+	//オブジェクトマネージャー初期化
 	mManager = new ObjectManager();
-
-	if(!ModeBase::Initialize()) { return false; }
-	Player* player = new Player();
-	Component* component_1 = new Component(player, 10);
-	player->AddComponent(component_1);
-	Component* component_2 = new Component(player, 9);
-	player->AddComponent(component_2);
-	Component* component_3 = new Component(player, 11);
-	player->AddComponent(component_3);
-	MoveComponent* move = new MoveComponent(player, 12);
-	player->AddComponent(move);
-	mManager->Spawn(player);
-
+	if (!ModeBase::Initialize()) { return false; }
+	//登録
+	Register();
 	return true;
 }
 
@@ -25,6 +18,32 @@ bool ModeGame::Terminate()
 {
 	ModeBase::Terminate();
 	return true;
+}
+
+void ModeGame::Register()
+{
+	//ステージをマネージャーに登録する
+	{
+		//オブジェクト(ステージ)初期化
+		Stage* stage = new Stage();
+		//ステージ描画用コンポーネント初期化
+		DrawComponent* draw = new DrawComponent(stage);
+		//パスを入れておく
+		std::string pass = "res/Model/Stage/TestModel.mv1";
+		//セッターでパスを登録
+		draw->SetPass(pass);
+		//ステージにコンポーネント登録
+		stage->AddComponent(draw);
+		//マネージャーにステージ登録
+		mManager->Spawn(stage);
+	}
+	//プレイヤーをマネージャーに登録する
+	{
+		//オブジェクト(プレイヤー)初期化
+		Player* player = new Player();
+		//マネージャーにプレイヤー登録
+		mManager->Spawn(player);
+	}
 }
 
 bool ModeGame::Process()
@@ -41,3 +60,5 @@ bool ModeGame::Render()
 
 	return true;
 }
+
+

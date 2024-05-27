@@ -12,7 +12,6 @@ void AIComponent::Update()
 {
 	//Œ»Ý‚Ìó‘Ô‚È‚ç‚ÎXV‚·‚é
 	if (mState) { mState->Update();}
-	
 }
 
 void AIComponent::ChangeState(const std::string& name)
