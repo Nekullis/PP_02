@@ -9,6 +9,8 @@ public:
 	void Update(float deltatime)override;
 	//ゲッター
 	int GetHandle() const { return mHandle; }
+	//セッター
+	void SetPass(std::string pass);
 protected:
 	int mHandle;
 	std::string mPass;
