@@ -41,9 +41,18 @@ void ModeGame::Register()
 	{
 		//オブジェクト(プレイヤー)初期化
 		Player* player = new Player();
+		//プレイヤー描画用コンポーネント追加
+		DrawComponent* draw = new DrawComponent(player);
+		//パスを入れておく
+		std::string pass = "";
+		//セッターでパスを登録
+		draw->SetPass(pass);
+		//プレイヤーにコンポーネント登録
+		player->AddComponent(draw);
 		//マネージャーにプレイヤー登録
 		mManager->Spawn(player);
 	}
+
 }
 
 bool ModeGame::Process()
