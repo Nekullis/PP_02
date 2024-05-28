@@ -44,7 +44,7 @@ void ModeGame::Register()
 		//プレイヤー描画用コンポーネント追加
 		DrawComponent* draw = new DrawComponent(player);
 		//パスを入れておく
-		std::string pass = "";
+		std::string pass = "res/Model/Character/Player/player.mv1";
 		//セッターでパスを登録
 		draw->SetPass(pass);
 		//プレイヤーにコンポーネント登録
