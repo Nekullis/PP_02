@@ -1,7 +1,9 @@
 #include "ObjectManager.h"
 #include "DxLib.h"
+ObjectManager* ObjectManager::obInstance = nullptr;
 ObjectManager::ObjectManager()
 {
+	obInstance = this;
 }
 
 ObjectManager::~ObjectManager()

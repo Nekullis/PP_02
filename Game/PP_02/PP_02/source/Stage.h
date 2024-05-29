@@ -10,5 +10,6 @@ public:
 	void Render()override;
 protected:
 	int mHandle;
+	class ObjectManager* mManager;
 };
 

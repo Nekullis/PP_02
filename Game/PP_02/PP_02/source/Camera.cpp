@@ -5,6 +5,7 @@ Camera::Camera() : base()
 	mTarget = { 0 };
 	mNear = 20;
 	mFar = 10000;
+
 }
 
 Camera::~Camera()

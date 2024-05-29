@@ -1,4 +1,5 @@
 #pragma once
+
 class ApplicationGlobal
 {
 //クラス関係なくグローバルで使いたい物をまとめたクラス

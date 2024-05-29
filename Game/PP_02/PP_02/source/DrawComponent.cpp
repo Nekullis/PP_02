@@ -3,17 +3,18 @@
 
 DrawComponent::DrawComponent(ObjectBase* owner, int updateowder) :Component(owner, updateowder)
 {
-
+	mHandle = 0;
+	mPass = "";
 }
 
 DrawComponent::~DrawComponent()
 {
 }
 
-void DrawComponent::SetPass(std::string pass)
+void DrawComponent::SetPass(const char* pass)
 {
 	mPass = pass;
-	mHandle = MV1LoadModel((const TCHAR*)(mPass.c_str()));
+	mHandle = MV1LoadModel((const TCHAR*)(mPass));
 }
 
 void DrawComponent::Update()

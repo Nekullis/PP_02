@@ -7,6 +7,7 @@ class ObjectManager
 public:
 	ObjectManager();
 	~ObjectManager();
+	static ObjectManager* obInstance;
 	void Process();
 	void Render();
 	//ìoò^
@@ -15,6 +16,7 @@ public:
 	void Destroy(ObjectBase* obj);
 	//ÉQÉbÉ^Å[
 	std::list<ObjectBase*> GetObjectList() { return _objectList; }
+	static ObjectManager* GetInstance() { return obInstance; }
 protected:
 	std::list<ObjectBase*> _objectList;
 };

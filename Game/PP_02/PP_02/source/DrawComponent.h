@@ -10,9 +10,9 @@ public:
 	//ゲッター
 	int GetHandle() const { return mHandle; }
 	//セッター
-	void SetPass(std::string pass);
+	void SetPass(const char* pass);
 protected:
 	int mHandle;
-	std::string mPass;
+	const char* mPass;
 };
 

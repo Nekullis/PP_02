@@ -18,6 +18,6 @@ public:
 protected:
 	//ステータス
 	STATUS _status;
-	int mCg;
+	class ObjectManager* mManager;
 };
 
