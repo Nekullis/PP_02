@@ -36,8 +36,8 @@ bool ModeGame::Process()
 bool ModeGame::Render()
 {
 	ModeBase::Render();
-	mManager->Render();
-
+	SetUseLighting(TRUE);
+	ChangeLightTypeDir(Vector3D(0.5,-1,0).dxl());
 	return true;
 }
 

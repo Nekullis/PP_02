@@ -2,8 +2,11 @@
 #include "DxLib.h"
 #include "DrawComponent.h"
 #include "ObjectManager.h"
+#include "MyMath.h"
 Stage::Stage():ObjectBase()
 {
+	mPos = Vector3D(0, -10, 0);
+	mRotation = MyMath::DegToRad(90);
 	mManager = ObjectManager::GetInstance();
 	//ステージ描画用コンポーネント初期化
 	DrawComponent* draw = new DrawComponent(this);

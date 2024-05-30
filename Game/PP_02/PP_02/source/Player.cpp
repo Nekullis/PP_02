@@ -6,6 +6,7 @@ Player::Player():chara()
 {
 	mManager = ObjectManager::GetInstance();
 	_status = STATUS::WAIT;
+	mPos = Vector3D(0, 0, -500);
 	//プレイヤー描画用コンポーネント追加
 	DrawComponent* draw = new DrawComponent(this);
 	//パスを入れておく

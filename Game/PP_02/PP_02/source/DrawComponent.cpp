@@ -1,4 +1,5 @@
 #include "DrawComponent.h"
+#include "ObjectBase.h"
 #include "DxLib.h"
 
 DrawComponent::DrawComponent(ObjectBase* owner, int updateowder) :Component(owner, updateowder)
@@ -20,6 +21,8 @@ void DrawComponent::SetPass(const char* pass)
 void DrawComponent::Update()
 {
 	Component::Update();
+	MV1SetPosition(mHandle, mOwner->GetPos().dxl());
+	//MV1SetRotationXYZ(mHandle, Vector3D(mOwner->GetRotation(), 0, 0).dxl());
 	MV1DrawModel(mHandle);
 }
 
