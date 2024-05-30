@@ -1,5 +1,6 @@
 #pragma once
-#include "ApplicationBase.h"
+#include "AppFrame.h"
+#include <thread>
 //アプリケーションのメイン部分。ここからモード変移などを行うクラス
 class ApplicationMain : public ApplicationBase
 {

@@ -1,5 +1,5 @@
 #pragma once
-#include "Component.h"
+#include "AppFrame.h"
 class MoveComponent : public Component
 {
 public:

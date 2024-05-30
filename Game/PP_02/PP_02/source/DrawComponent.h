@@ -1,5 +1,5 @@
 #pragma once
-#include "Component.h"
+#include "AppFrame.h"
 class DrawComponent :public Component
 {
 public:

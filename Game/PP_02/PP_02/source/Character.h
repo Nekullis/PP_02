@@ -1,5 +1,5 @@
 #pragma once
-#include "ObjectBase.h"
+#include "AppFrame.h"
 class Character : public ObjectBase
 {
 	using base = ObjectBase;

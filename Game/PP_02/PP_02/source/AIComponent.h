@@ -1,5 +1,5 @@
 #pragma once
-#include "Component.h"
+#include "AppFrame.h"
 #include <unordered_map>
 class AIComponent : public Component
 {

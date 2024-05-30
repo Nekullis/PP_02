@@ -45,33 +45,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\CFile.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Easing.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Effect.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="source\GameXPad.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Matrix3D.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="source\MyMath.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Vector3D.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="source\WinMain.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="source\ApplicationBase.cpp">
-      <Filter>ソース ファイル\Application</Filter>
-    </ClCompile>
     <ClCompile Include="source\ApplicationGlobal.cpp">
       <Filter>ソース ファイル\Application</Filter>
     </ClCompile>
@@ -81,19 +54,10 @@
     <ClCompile Include="source\Character.cpp">
       <Filter>ソース ファイル\Object</Filter>
     </ClCompile>
-    <ClCompile Include="source\Component.cpp">
-      <Filter>ソース ファイル\Component</Filter>
-    </ClCompile>
     <ClCompile Include="source\Camera.cpp">
       <Filter>ソース ファイル\Object</Filter>
     </ClCompile>
-    <ClCompile Include="source\ModeBase.cpp">
-      <Filter>ソース ファイル\Mode</Filter>
-    </ClCompile>
     <ClCompile Include="source\ModeGame.cpp">
-      <Filter>ソース ファイル\Mode</Filter>
-    </ClCompile>
-    <ClCompile Include="source\ModeServer.cpp">
       <Filter>ソース ファイル\Mode</Filter>
     </ClCompile>
     <ClCompile Include="source\ModeTitle.cpp">
@@ -101,9 +65,6 @@
     </ClCompile>
     <ClCompile Include="source\MoveComponent.cpp">
       <Filter>ソース ファイル\Component</Filter>
-    </ClCompile>
-    <ClCompile Include="source\ObjectBase.cpp">
-      <Filter>ソース ファイル\Object</Filter>
     </ClCompile>
     <ClCompile Include="source\ObjectManager.cpp">
       <Filter>ソース ファイル\Object</Filter>
@@ -134,30 +95,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\CFile.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Easing.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Effect.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="source\GameXPad.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Matrix3D.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="source\MyMath.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Vector3D.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ApplicationBase.h">
-      <Filter>ヘッダー ファイル\Application</Filter>
-    </ClInclude>
     <ClInclude Include="source\ApplicationGlobal.h">
       <Filter>ヘッダー ファイル\Application</Filter>
     </ClInclude>
@@ -170,23 +107,11 @@
     <ClInclude Include="source\Character.h">
       <Filter>ヘッダー ファイル\Object</Filter>
     </ClInclude>
-    <ClInclude Include="source\Component.h">
-      <Filter>ヘッダー ファイル\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ModeBase.h">
-      <Filter>ヘッダー ファイル\Mode</Filter>
-    </ClInclude>
     <ClInclude Include="source\ModeGame.h">
-      <Filter>ヘッダー ファイル\Mode</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ModeServer.h">
       <Filter>ヘッダー ファイル\Mode</Filter>
     </ClInclude>
     <ClInclude Include="source\ModeTitle.h">
       <Filter>ヘッダー ファイル\Mode</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ObjectBase.h">
-      <Filter>ヘッダー ファイル\Object</Filter>
     </ClInclude>
     <ClInclude Include="source\ObjectManager.h">
       <Filter>ヘッダー ファイル\Object</Filter>
@@ -212,11 +137,11 @@
     <ClInclude Include="source\AIAttack.h">
       <Filter>ヘッダー ファイル\AI</Filter>
     </ClInclude>
-    <ClInclude Include="source\AIVigilance.h">
-      <Filter>ヘッダー ファイル\Application</Filter>
-    </ClInclude>
     <ClInclude Include="source\DrawComponent.h">
       <Filter>ヘッダー ファイル\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\AIVigilance.h">
+      <Filter>ヘッダー ファイル\AI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 #pragma once
 #include <utility>
-#include "ObjectBase.h"
+#include "AppFrame.h"
 //ゲーム内のカメラ処理全般のクラス
 class Camera : public ObjectBase
 {

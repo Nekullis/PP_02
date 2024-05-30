@@ -27,26 +27,13 @@
     <ClCompile Include="source\AIVigilance.cpp" />
     <ClCompile Include="source\MoveComponent.cpp" />
     <ClCompile Include="source\ModeGame.cpp" />
-    <ClCompile Include="source\Component.cpp" />
-    <ClCompile Include="source\ApplicationBase.cpp" />
     <ClCompile Include="source\ApplicationGlobal.cpp" />
     <ClCompile Include="source\ApplicationMain.cpp" />
     <ClCompile Include="source\Camera.cpp" />
-    <ClCompile Include="source\CFile.cpp" />
     <ClCompile Include="source\Character.cpp" />
-    <ClCompile Include="source\Easing.cpp" />
-    <ClCompile Include="source\Effect.cpp" />
-    <ClCompile Include="source\GameXPad.cpp" />
-    <ClCompile Include="source\Matrix3D.cpp" />
-    <ClCompile Include="source\ModeBase.cpp" />
-    <ClCompile Include="source\ModeServer.cpp" />
     <ClCompile Include="source\ModeTitle.cpp" />
-    <ClCompile Include="source\MyMath.cpp" />
-    <ClCompile Include="source\ObjectBase.cpp" />
     <ClCompile Include="source\ObjectManager.cpp" />
     <ClCompile Include="source\Player.cpp" />
-    <ClCompile Include="source\Vector3D.cpp" />
-    <ClCompile Include="source\WinMain.cpp" />
     <ClCompile Include="source\Stage.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -58,25 +45,13 @@
     <ClInclude Include="source\AIVigilance.h" />
     <ClInclude Include="source\MoveComponent.h" />
     <ClInclude Include="source\ModeGame.h" />
-    <ClInclude Include="source\Component.h" />
-    <ClInclude Include="source\ApplicationBase.h" />
     <ClInclude Include="source\ApplicationGlobal.h" />
     <ClInclude Include="source\ApplicationMain.h" />
     <ClInclude Include="source\Camera.h" />
-    <ClInclude Include="source\CFile.h" />
     <ClInclude Include="source\Character.h" />
-    <ClInclude Include="source\Easing.h" />
-    <ClInclude Include="source\Effect.h" />
-    <ClInclude Include="source\GameXPad.h" />
-    <ClInclude Include="source\Matrix3D.h" />
-    <ClInclude Include="source\ModeBase.h" />
-    <ClInclude Include="source\ModeServer.h" />
     <ClInclude Include="source\ModeTitle.h" />
-    <ClInclude Include="source\MyMath.h" />
-    <ClInclude Include="source\ObjectBase.h" />
     <ClInclude Include="source\ObjectManager.h" />
     <ClInclude Include="source\Player.h" />
-    <ClInclude Include="source\Vector3D.h" />
     <ClInclude Include="source\Stage.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -132,8 +107,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)..\..\DxLib;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)..\..\DxLib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)..\..\..\PP_AppFrame\PP_AppFrame\PP_AppFrame\source;..\DxLib</IncludePath>
+    <LibraryPath>$(SolutionDir)..\..\..\PP_AppFrame\PP_AppFrame\PP_AppFrame\source;..\DxLib</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir)..\..\..\PP_AppFrame\PP_AppFrame\PP_AppFrame\source;..\DxLib</IncludePath>
+    <LibraryPath>$(SolutionDir)..\..\..\PP_AppFrame\PP_AppFrame\PP_AppFrame\source;..\DxLib</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

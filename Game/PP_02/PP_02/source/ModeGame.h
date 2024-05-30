@@ -1,5 +1,5 @@
 #pragma once
-#include "ModeBase.h"
+#include "AppFrame.h"
 #include "ObjectManager.h"
 class ModeGame : public ModeBase
 {

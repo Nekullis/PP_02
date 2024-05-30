@@ -1,5 +1,5 @@
 #pragma once
-#include "ObjectBase.h"
+#include "AppFrame.h" 
 #include <list>
 //オブジェクトの登録、消去などに関わるクラス
 class ObjectManager
