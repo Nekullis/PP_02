@@ -1,6 +1,4 @@
 #include "DrawComponent.h"
-#include "ObjectBase.h"
-#include "DxLib.h"
 
 DrawComponent::DrawComponent(ObjectBase* owner, int updateowder) :Component(owner, updateowder)
 {

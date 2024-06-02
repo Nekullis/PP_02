@@ -7,7 +7,7 @@ bool ApplicationMain::Initialize(HINSTANCE instance)
 {
 	if (!base::Initialize(instance)) { return false; }
 	//グローバルクラス内の関数初期化
-	_init = new std::thread(&ApplicationGlobal::Init, &_global);
+	//_init = new std::thread(&ApplicationGlobal::Init, &_global);
 	ModeServer::GetInstance()->Add(new ModeGame(), 1, "game");
 	return true;
 }
@@ -27,12 +27,12 @@ bool ApplicationMain::Input()
 bool ApplicationMain::Process()
 {
 	base::Process();
-	if (_global._isLoad && _init != nullptr)
+	/*if (_global._isLoad && _init != nullptr)
 	{
 		_init->detach();
 		delete _init;
 		_init = nullptr;
-	}
+	}*/
 
 	return true;
 }

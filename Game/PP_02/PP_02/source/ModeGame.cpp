@@ -1,6 +1,5 @@
 #include "ModeGame.h"
 #include "Player.h"
-#include "Component.h"
 #include "MoveComponent.h"
 #include "DrawComponent.h"
 #include "Stage.h"

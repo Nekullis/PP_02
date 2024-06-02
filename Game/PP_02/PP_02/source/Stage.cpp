@@ -1,8 +1,6 @@
 #include "Stage.h"
-#include "DxLib.h"
 #include "DrawComponent.h"
 #include "ObjectManager.h"
-#include "MyMath.h"
 Stage::Stage():ObjectBase()
 {
 	mPos = Vector3D(0, -10, 0);

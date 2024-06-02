@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PP_02", "PP_02\PP_02.vcxproj", "{629F9B44-4692-468F-AB87-C84C967C317C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0910E88C-54C3-4D02-A588-A06149720B31} = {0910E88C-54C3-4D02-A588-A06149720B31}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PP_AppFrame", "..\..\..\PP_AppFrame\PP_AppFrame\PP_AppFrame\PP_AppFrame.vcxproj", "{0910E88C-54C3-4D02-A588-A06149720B31}"
 EndProject

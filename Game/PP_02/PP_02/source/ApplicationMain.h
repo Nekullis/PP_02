@@ -1,6 +1,6 @@
 #pragma once
 #include "AppFrame.h"
-#include <thread>
+//#include <thread>
 //アプリケーションのメイン部分。ここからモード変移などを行うクラス
 class ApplicationMain : public ApplicationBase
 {
@@ -13,6 +13,6 @@ public:
 	bool Render();
 protected:
 	//初期化
-	std::thread* _init;
+	//std::thread* _init;
 };
 
