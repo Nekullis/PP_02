@@ -9,7 +9,7 @@ CameraComponent::CameraComponent(ObjectBase* owner, int updateowder) : Component
 	//Å’Z•`‰æ‹——£‰Šú‰»
 	mNear = 20;
 	//Å’·•`‰æ‹——£‰Šú‰»
-	mFar = 10000;
+	mFar = 50000;
 }
 
 CameraComponent::~CameraComponent()
@@ -20,9 +20,9 @@ void CameraComponent::Update()
 {
 	Component::Update();
 	//ˆÊ’uÝ’è
-	Vector3D pos = Vector3D(mOwner->GetPos()._x, mOwner->GetPos()._y + 600, mOwner->GetPos()._z - 100);
+	Vector3D pos = Vector3D(mOwner->GetPos()._x, mOwner->GetPos()._y + 300, mOwner->GetPos()._z - 700);
 	//’Ž‹“_Ý’è
-	Vector3D target = Vector3D(mOwner->GetPos()._x, mOwner->GetPos()._y, mOwner->GetPos()._z + 200);
+	Vector3D target = Vector3D(mOwner->GetPos()._x, mOwner->GetPos()._y + 200, mOwner->GetPos()._z );
 	SetCameraNearFar(mNear, mFar);
 	SetCameraPositionAndTarget_UpVecY(pos.dxl(), target.dxl());
 }

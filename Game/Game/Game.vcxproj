@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\Enemy.cpp" />
     <ClCompile Include="source\InputComponent.cpp" />
     <ClCompile Include="source\AIAttack.cpp" />
     <ClCompile Include="source\AIComponent.cpp" />
@@ -174,6 +175,7 @@
     <ClCompile Include="source\Stage.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\Enemy.h" />
     <ClInclude Include="source\InputComponent.h" />
     <ClInclude Include="source\AIAttack.h" />
     <ClInclude Include="source\AIComponent.h" />

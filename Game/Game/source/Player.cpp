@@ -12,7 +12,7 @@ Player::Player(ModeBase* game):chara(game)
 	//位置初期化
 	mPos = Vector3D(0, 500, 0);
 	//向き初期化
-	mRotation = Vector3D(MyMath::DegToRad(90), 0, 0);
+	mRotation = Vector3D(0, 0, 0);
 	//入力処理のコンポーネント初期化
 	InputComponent* input = new InputComponent(this);
 	//プレイヤー速度初期化

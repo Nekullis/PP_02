@@ -34,9 +34,9 @@ bool ModeGame::Process()
 bool ModeGame::Render()
 {
 	SetUseZBuffer3D(true);
-	//SetWriteZBuffer3D(true);
+	SetWriteZBuffer3D(true);
 	SetUseLighting(true);
-	ChangeLightTypeDir(Vector3D(0,-1,0).dxl());
+	ChangeLightTypeDir(Vector3D(0,-1,1).dxl());
 	ModeBase::Render();
 	mManager->Render();
 	return true;

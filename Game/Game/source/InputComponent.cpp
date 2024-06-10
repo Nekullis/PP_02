@@ -25,6 +25,8 @@ void InputComponent::Update()
 		pos._x += speed * cos(dir);
 		pos._z += speed * sin(dir);
 		mOwner->SetPos(pos);
+		Vector3D rot = Vector3D(0, -(dir + 90 * DX_PI / 180), 0);
+		mOwner->SetRotation(rot);
 	}
 	
 }
