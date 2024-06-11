@@ -3,7 +3,7 @@
 class Enemy : public Character
 {
 public:
-	Enemy();
+	Enemy(ModeBase* game);
 	virtual ~Enemy();
 	void Initialize()override;
 	void Process()override;

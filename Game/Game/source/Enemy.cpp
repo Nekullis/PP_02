@@ -1,6 +1,6 @@
 #include "Enemy.h"
 
-Enemy::Enemy()
+Enemy::Enemy(ModeBase* game) : Character(game)
 {
 }
 

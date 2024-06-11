@@ -12,6 +12,7 @@ public:
 	};
 	Player(ModeBase* game);
 	virtual ~Player();
+	void RegisterAnimation();
 	void Initialize()override;
 	void Process()override;
 	void Render()override;
@@ -19,6 +20,13 @@ protected:
 	//ステータス
 	STATUS _status;
 	class ObjectManager* mManager;
+	//アニメーション関連
+	int mAnimHandle;
+	int mAnimAttachIndex;
+	float mAnimPlayTime;
+	float mAnimTotalTime;
+
+
 	
 };
 
