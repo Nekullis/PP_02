@@ -8,5 +8,7 @@ public:
 	void Initialize()override;
 	void Process()override;
 	void Render()override;
+protected:
+	class ObjectManager* mManager;
 };
 

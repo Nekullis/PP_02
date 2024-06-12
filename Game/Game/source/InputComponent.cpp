@@ -1,4 +1,5 @@
 #include "InputComponent.h"
+#include "Player.h"
 
 InputComponent::InputComponent(ObjectBase* owner, int updateowder) :MoveComponent(owner, updateowder)
 {

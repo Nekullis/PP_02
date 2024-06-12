@@ -48,9 +48,6 @@
     <ClCompile Include="source\AIAttack.cpp">
       <Filter>ソース ファイル\AI</Filter>
     </ClCompile>
-    <ClCompile Include="source\AIComponent.cpp">
-      <Filter>ソース ファイル\AI</Filter>
-    </ClCompile>
     <ClCompile Include="source\AIDeath.cpp">
       <Filter>ソース ファイル\AI</Filter>
     </ClCompile>
@@ -99,12 +96,15 @@
     <ClCompile Include="source\Enemy.cpp">
       <Filter>ソース ファイル\Object</Filter>
     </ClCompile>
+    <ClCompile Include="source\AIComponent.cpp">
+      <Filter>ソース ファイル\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\EnemyMob.cpp">
+      <Filter>ソース ファイル\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\AIAttack.h">
-      <Filter>ヘッダー ファイル\AI</Filter>
-    </ClInclude>
-    <ClInclude Include="source\AIComponent.h">
       <Filter>ヘッダー ファイル\AI</Filter>
     </ClInclude>
     <ClInclude Include="source\AIDeath.h">
@@ -153,6 +153,12 @@
       <Filter>ヘッダー ファイル\Component</Filter>
     </ClInclude>
     <ClInclude Include="source\Enemy.h">
+      <Filter>ヘッダー ファイル\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="source\AIComponent.h">
+      <Filter>ヘッダー ファイル\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\EnemyMob.h">
       <Filter>ヘッダー ファイル\Object</Filter>
     </ClInclude>
   </ItemGroup>

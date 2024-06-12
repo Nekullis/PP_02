@@ -1,4 +1,5 @@
 #include "Enemy.h"
+#include "ObjectManager.h"
 
 Enemy::Enemy(ModeBase* game) : Character(game)
 {
