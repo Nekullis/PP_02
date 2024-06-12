@@ -12,25 +12,15 @@ public:
 	};
 	Player(ModeBase* game);
 	virtual ~Player();
-	void RegisterAnimation();
+	void RegisterAnimation()override;
 	void Initialize()override;
 	void Process()override;
 	void Render()override;
 	//セッター
-	void SetAnimation(ANIMATION animation) { mAnimation = animation; }
 protected:
 	//ステータス
 	ANIMATION mAnimation;
 	ANIMATION oldAnimation;
 	class ObjectManager* mManager;
-	//アニメーション関連
-	int mAnimHandle;
-	int mAnimAttachIndex;
-	float mAnimPlayTime;
-	float mAnimTotalTime;
-	std::pair<int, int> mAnimBrend;
-
-
-	
 };
 

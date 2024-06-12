@@ -15,6 +15,7 @@ Player::Player(ModeBase* game):chara(game)
 	//向き初期化
 	mRotation = Vector3D(0, 0, 0);
 	Initialize();
+	mAttachNum = 0;
 	RegisterAnimation();
 	//マネージャーにプレイヤー登録
 	mManager->Spawn(this);
@@ -48,12 +49,7 @@ void Player::Initialize()
 
 void Player::RegisterAnimation()
 {
-	//初期状態のアニメーションセット
-	mAnimAttachIndex = MV1AttachAnim(mAnimHandle, 0, -1, false);
-	//再生時間初期化
-	mAnimPlayTime = 0;
-	//総再生時間取得
-	mAnimTotalTime = MV1GetAttachAnimTotalTime(mAnimHandle, mAnimAttachIndex);
+	Character::RegisterAnimation();
 }
 
 void Player::Process()

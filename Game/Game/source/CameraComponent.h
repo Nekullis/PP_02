@@ -13,6 +13,7 @@ public:
 	//セッター
 	void SetTerget(Vector3D vec) { mTarget = vec; }
 protected:
+	GameXPad* mPad;
 	//カメラ位置
 	Vector3D mPos;
 	//カメラ注視点
