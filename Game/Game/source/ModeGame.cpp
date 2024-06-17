@@ -7,13 +7,17 @@ bool ModeGame::Initialize()
 	if (!ModeBase::Initialize()) { return false; }
 	//オブジェクトマネージャー初期化
 	mManager = new ObjectManager();
+	mGameCol = new GameCollision();
 	Register();
+	
 	return true;
 }
 
 bool ModeGame::Terminate()
 {
 	ModeBase::Terminate();
+	delete mManager;
+	delete mGameCol;
 	return true;
 }
 
@@ -31,6 +35,7 @@ bool ModeGame::Process()
 {
 	ModeBase::Process();
 	mManager->Process();
+	mGameCol->Update();
 	return true;
 }
 

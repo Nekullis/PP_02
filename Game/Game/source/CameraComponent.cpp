@@ -1,4 +1,5 @@
 #include "CameraComponent.h"
+#include "GameCollision.h"
 
 CameraComponent* CameraComponent::cameraInstance = nullptr;
 CameraComponent::CameraComponent(ObjectBase* owner, int updateowder) : Component(owner, updateowder)
@@ -37,7 +38,9 @@ void CameraComponent::Update()
 	pos._y += 300;
 	mPos = pos;
 	//注視点設定
-	Vector3D target = Vector3D(mOwner->GetPos());
+	Vector3D target;
+	if(GameCollision::GetInstance()->GetLockOn()) { target = GameCollision::GetInstance()->GetTarget(); }
+	else { target = Vector3D(mOwner->GetPos()); }
 	//カメラ描写の最短距離、最長距離を設定する
 	SetCameraNearFar(mNear, mFar);
 	//カメラの位置と注視点を反映する

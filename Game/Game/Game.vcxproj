@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\GameCollision.cpp" />
     <ClCompile Include="source\AttackState.cpp" />
     <ClCompile Include="source\AttackManager.cpp" />
     <ClCompile Include="source\EnemyMob.cpp" />
@@ -178,6 +179,7 @@
     <ClCompile Include="source\Stage.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\GameCollision.h" />
     <ClInclude Include="source\AttackState.h" />
     <ClInclude Include="source\AttackManager.h" />
     <ClInclude Include="source\EnemyMob.h" />
