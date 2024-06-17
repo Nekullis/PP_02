@@ -77,8 +77,11 @@ void AttackManager::Update()
 	//何も入力せずにトータルフレームに達した
 	if (mAttackCnt == mState->GetAttack().mMotionTotalFrame)
 	{
+		//攻撃番号を0に
 		mNowNum = 0;
+		//攻撃モーション変更
 		AttackMotionChange(mNowNum);
+		//カウントリセット
 		mAttackCnt = 0;
 	}
 }
