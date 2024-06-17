@@ -7,15 +7,20 @@ class CameraComponent : public Component
 public:
 	CameraComponent(ObjectBase* owner,int updateowder = 100);
 	virtual ~CameraComponent();
+	static CameraComponent* cameraInstance;
 	void Update()override;
 	//ゲッター
-	Vector3D GetTerget() { return mTarget; }
+	static CameraComponent* GetInstance() { return cameraInstance; }
+	Vector3D GetTarget() { return mTarget; }
+	Vector3D GetDir() { return mDir; }
+	Vector3D GetPos() { return mPos; }
 	//セッター
-	void SetTerget(Vector3D vec) { mTarget = vec; }
+	void SetTarget(Vector3D vec) { mTarget = vec; }
 protected:
 	GameXPad* mPad;
 	//カメラ位置
 	Vector3D mPos;
+	Vector3D mDir;
 	//カメラ注視点
 	Vector3D mTarget;
 	//最短描画距離

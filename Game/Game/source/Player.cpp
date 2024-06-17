@@ -1,11 +1,14 @@
 #include "Player.h"
-#include "DrawComponent.h"
-#include "ObjectManager.h"
-#include "CameraComponent.h"
 #include "AppFrame.h"
+#include "ObjectManager.h"
+#include "DrawComponent.h"
+#include "CameraComponent.h"
 #include "InputComponent.h"
+
+Player* Player::plInstance = nullptr;
 Player::Player(ModeBase* game):chara(game)
 {
+	plInstance = this;
 	mManager = ObjectManager::GetInstance();
 	_hp = 100;
 	//待機状態に
@@ -55,7 +58,7 @@ void Player::RegisterAnimation()
 void Player::Process()
 {
 	chara::Process();
-	if (GameXPad::GetInstance()->IsInputStick())
+	if (GameXPad::GetInstance()->IsInputStickLeft())
 	{
 		mAnimation = ANIMATION::WALK;
 	}
@@ -79,6 +82,18 @@ void Player::Process()
 		//歩行
 		case ANIMATION::WALK:
 			mAnimAttachIndex = MV1AttachAnim(mAnimHandle, 7, -1, false);
+			break;
+			//歩行
+		case ANIMATION::FIRSTATTACK:
+			mAnimAttachIndex = MV1AttachAnim(mAnimHandle, 2, -1, false);
+			break;
+			//歩行
+		case ANIMATION::SECONDATTACK:
+			mAnimAttachIndex = MV1AttachAnim(mAnimHandle, 3, -1, false);
+			break;
+			//歩行
+		case ANIMATION::THIRDATTACK:
+			mAnimAttachIndex = MV1AttachAnim(mAnimHandle, 4, -1, false);
 			break;
 		}
 		//再生時間リセット
