@@ -4,6 +4,7 @@
 class CollisionManager
 {
 public:
+	static CollisionManager* colMaInstance;
 	CollisionManager();
 	~CollisionManager();
 	void Update();
@@ -11,6 +12,8 @@ public:
 	void AddCollision(CollisionComponent* col);
 	//íœ
 	void Delete();
+	//ƒQƒbƒ^[
+	static CollisionManager* GetInstance() { return colMaInstance; }
 protected:
 	std::list<CollisionComponent*> mCollisionList;
 };
