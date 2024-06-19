@@ -20,6 +20,7 @@ public:
 	//セッター
 	void SetPos(Vector3D pos) { mPos = pos; }
 	void SetRadius(float radius) { mRadius = radius; }
+	void SetType(COLLISIONTYPE col) { mType = col; }
 protected:
 	Vector3D mPos;
 	class CollisionManager* mManager;

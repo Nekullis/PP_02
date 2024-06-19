@@ -3,7 +3,8 @@
 
 CollisionComponent::CollisionComponent(ObjectBase* owner, int updateowder) :Component(owner, updateowder)
 {
-	mManager = new CollisionManager();
+	mOwner = owner;
+	mManager = CollisionManager::GetInstance();
 	mType = COLLISIONTYPE::NONE;
 	mPos = Vector3D(0, 0, 0);
 	mRadius = 0;
