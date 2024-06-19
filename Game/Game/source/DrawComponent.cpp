@@ -2,8 +2,10 @@
 #include "ModeGame.h"
 DrawComponent::DrawComponent(ObjectBase* owner, int updateowder) :Component(owner, updateowder)
 {
+	mOwner = owner;
 	mHandle = 0;
 	mPass = "";
+	mPos = Vector3D(0.0, 0.0, 0.0);
 }
 
 DrawComponent::~DrawComponent()
@@ -19,7 +21,8 @@ void DrawComponent::LoadPass(const char* pass)
 void DrawComponent::Update()
 {
 	Component::Update();
-	MV1SetPosition(mHandle, mOwner->GetPos().dxl());
+	//mPos = mOwner->GetPos();
+	MV1SetPosition(mHandle, mPos.dxl());
 	MV1SetRotationXYZ(mHandle, mOwner->GetRotation().dxl());
 	MV1DrawModel(mHandle);
 }
