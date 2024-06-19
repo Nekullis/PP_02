@@ -3,6 +3,7 @@
 #include "ObjectManager.h"
 #include "InputComponent.h"
 #include "Player.h"
+#include "Stage.h"
 
 GameCollision* GameCollision::colInstance = nullptr;
 GameCollision::GameCollision()
@@ -56,7 +57,7 @@ void GameCollision::CameraTerget()
 		for (auto&& obj : object_list)
 		{
 			//プレイヤーは候補に入れない
-			if (obj->GetPos() == Player::GetInstance()->GetPos()) { continue; }
+			if (obj->GetPos() == Player::GetInstance()->GetPos()|| obj->GetPos() == Stage::GetInstance()->GetPos()) { continue; }
 			//敵の位置
 			Vector3D enemy_pos = obj->GetPos();
 			//敵の高さを考慮

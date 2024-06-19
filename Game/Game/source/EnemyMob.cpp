@@ -2,6 +2,7 @@
 #include "DrawComponent.h"
 #include "ObjectManager.h"
 #include "AIComponent.h"
+#include "CapsuleColComponent.h"
 
 EnemyMob::EnemyMob(ModeBase* game) :Enemy(game)
 {
@@ -39,6 +40,16 @@ void EnemyMob::Initialize()
 	mAnimHandle = draw->GetHandle();
 	//プレイヤーに描画用コンポーネント登録
 	mManager->AddDraw(draw);
+	//衝突判定用コンポーネント追加
+	CapsuleColComponent* collision = new CapsuleColComponent(this);
+	//位置設定
+	collision->SetPos(mPos);
+	//半径設定
+	float rad = 30.0;
+	collision->SetRadius(rad);
+	//線分の長さ設定
+	float line_seg = 170.0;
+	collision->SetSeg(line_seg);
 
 }
 
@@ -52,16 +63,16 @@ void EnemyMob::Process()
 		//アニメーションのデタッチ
 		MV1DetachAnim(mAnimHandle, mAnimAttachIndex);
 		//アニメーションによってアタッチする番号を変更する
-		switch(mAnimation)
+		switch (mAnimation)
 		{
 			//待機
-			case ANIMATION::WAIT:
-				mAnimAttachIndex = MV1AttachAnim(mAnimHandle, 6, -1, false);
-				break;
-				//歩行
-			case ANIMATION::WALK:
-				mAnimAttachIndex = MV1AttachAnim(mAnimHandle, 7, -1, false);
-				break;
+		case ANIMATION::WAIT:
+			mAnimAttachIndex = MV1AttachAnim(mAnimHandle, 6, -1, false);
+			break;
+			//歩行
+		case ANIMATION::WALK:
+			mAnimAttachIndex = MV1AttachAnim(mAnimHandle, 7, -1, false);
+			break;
 		}
 		//再生時間リセット
 		mAnimPlayTime = 0;

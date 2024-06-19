@@ -4,6 +4,7 @@
 #include "DrawComponent.h"
 #include "CameraComponent.h"
 #include "InputComponent.h"
+#include "CapsuleColComponent.h"
 
 Player* Player::plInstance = nullptr;
 Player::Player(ModeBase* game):chara(game)
@@ -22,6 +23,7 @@ Player::Player(ModeBase* game):chara(game)
 	RegisterAnimation();
 	//マネージャーにプレイヤー登録
 	mManager->Spawn(this);
+
 }
 
 Player::~Player()
@@ -48,6 +50,16 @@ void Player::Initialize()
 	mManager->AddDraw(draw);
 	//プレイヤーにカメラコンポーネント追加
 	CameraComponent* camera = new CameraComponent(this);
+	//衝突判定用コンポーネント追加
+	CapsuleColComponent* collision = new CapsuleColComponent(this);
+	//位置設定
+	collision->SetPos(mPos);
+	//半径設定
+	float rad = 30.0;
+	collision->SetRadius(rad);
+	//線分の長さ設定
+	float line_seg = 170.0;
+	collision->SetSeg(line_seg);
 }
 
 void Player::RegisterAnimation()

@@ -2,6 +2,7 @@
 #include "AppFrame.h"
 #include "ObjectManager.h"
 #include "GameCollision.h"
+#include "CollisionManager.h"
 class ModeGame : public ModeBase
 {
 public:
@@ -11,9 +12,10 @@ public:
 	virtual bool Render();
 	void Register();
 	//ÉQÉbÉ^Å[
-	ObjectManager* GetManager() { return mManager; }
+	ObjectManager* GetManager() { return mObjManager; }
 protected:
-	ObjectManager* mManager;
+	ObjectManager* mObjManager;
 	GameCollision* mGameCol;
+	CollisionManager* mColManager;
 };
 

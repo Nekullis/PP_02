@@ -43,6 +43,18 @@
     <Filter Include="ヘッダー ファイル\Mode">
       <UniqueIdentifier>{03ed6d6a-b345-4ab6-aacf-ccd9206dc2e2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Component\Collision">
+      <UniqueIdentifier>{cf94bd4c-ab69-4276-b45b-8c750563b371}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Component\Collision">
+      <UniqueIdentifier>{16011b5b-a012-4ae2-b8cb-441ccc43e23f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Manager">
+      <UniqueIdentifier>{3c14ba6b-3d67-4d6d-8bc0-c48e82ee7442}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Manager">
+      <UniqueIdentifier>{425b0b30-fd0b-4c90-8344-ba59ea72dd50}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\AIAttack.cpp">
@@ -64,9 +76,6 @@
       <Filter>ソース ファイル\Application</Filter>
     </ClCompile>
     <ClCompile Include="source\Character.cpp">
-      <Filter>ソース ファイル\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="source\ObjectManager.cpp">
       <Filter>ソース ファイル\Object</Filter>
     </ClCompile>
     <ClCompile Include="source\Player.cpp">
@@ -102,14 +111,26 @@
     <ClCompile Include="source\EnemyMob.cpp">
       <Filter>ソース ファイル\Object</Filter>
     </ClCompile>
-    <ClCompile Include="source\AttackManager.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="source\AttackState.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="source\GameCollision.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="source\CollisionComponent.cpp">
+      <Filter>ソース ファイル\Component\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="source\CapsuleColComponent.cpp">
+      <Filter>ソース ファイル\Component\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="source\AttackManager.cpp">
+      <Filter>ソース ファイル\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ObjectManager.cpp">
+      <Filter>ソース ファイル\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\CollisionManager.cpp">
+      <Filter>ソース ファイル\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -140,9 +161,6 @@
     <ClInclude Include="source\Stage.h">
       <Filter>ヘッダー ファイル\Object</Filter>
     </ClInclude>
-    <ClInclude Include="source\ObjectManager.h">
-      <Filter>ヘッダー ファイル\Object</Filter>
-    </ClInclude>
     <ClInclude Include="source\DrawComponent.h">
       <Filter>ヘッダー ファイル\Component</Filter>
     </ClInclude>
@@ -170,14 +188,26 @@
     <ClInclude Include="source\EnemyMob.h">
       <Filter>ヘッダー ファイル\Object</Filter>
     </ClInclude>
-    <ClInclude Include="source\AttackManager.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="source\AttackState.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="source\GameCollision.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="source\CollisionComponent.h">
+      <Filter>ヘッダー ファイル\Component\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="source\CapsuleColComponent.h">
+      <Filter>ヘッダー ファイル\Component\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="source\AttackManager.h">
+      <Filter>ヘッダー ファイル\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ObjectManager.h">
+      <Filter>ヘッダー ファイル\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\CollisionManager.h">
+      <Filter>ヘッダー ファイル\Manager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -6,8 +6,9 @@ bool ModeGame::Initialize()
 {
 	if (!ModeBase::Initialize()) { return false; }
 	//オブジェクトマネージャー初期化
-	mManager = new ObjectManager();
+	mObjManager = new ObjectManager();
 	mGameCol = new GameCollision();
+	mColManager = new CollisionManager();
 	Register();
 	
 	return true;
@@ -16,8 +17,9 @@ bool ModeGame::Initialize()
 bool ModeGame::Terminate()
 {
 	ModeBase::Terminate();
-	delete mManager;
+	delete mObjManager;
 	delete mGameCol;
+	delete mColManager;
 	return true;
 }
 
@@ -34,8 +36,9 @@ void ModeGame::Register()
 bool ModeGame::Process()
 {
 	ModeBase::Process();
-	mManager->Process();
+	mObjManager->Process();
 	mGameCol->Update();
+	mColManager->Update();
 	return true;
 }
 
@@ -46,7 +49,7 @@ bool ModeGame::Render()
 	SetUseLighting(true);
 	ChangeLightTypeDir(Vector3D(0,-1,1).dxl());
 	ModeBase::Render();
-	mManager->Render();
+	mObjManager->Render();
 	return true;
 }
 

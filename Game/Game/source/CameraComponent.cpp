@@ -30,8 +30,6 @@ void CameraComponent::Update()
 	//パッド入力で角度を代入
 	if (mPad->GetXRx() < 0) { mDir._y -= 0.05; }
 	if (mPad->GetXRx() > 0) { mDir._y += 0.05; }
-	/*if (mPad->GetXRy() < 0) { mDir._x -= 0.05; }
-	if (mPad->GetXRy() > 0) { mDir._x += 0.05; }*/
 	//カメラ位置をプレーヤー位置に球型座標系から変化した座標系を足した座標にする
 	pos = mOwner->GetPos() + MyMath::ConvertToCartesian(mDir, 700);
 	//後頭部より少し高めの位置にする

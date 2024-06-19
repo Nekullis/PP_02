@@ -155,6 +155,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\CapsuleColComponent.cpp" />
+    <ClCompile Include="source\CollisionManager.cpp" />
+    <ClCompile Include="source\CollisionComponent.cpp" />
     <ClCompile Include="source\GameCollision.cpp" />
     <ClCompile Include="source\AttackState.cpp" />
     <ClCompile Include="source\AttackManager.cpp" />
@@ -179,6 +182,9 @@
     <ClCompile Include="source\Stage.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\CapsuleColComponent.h" />
+    <ClInclude Include="source\CollisionManager.h" />
+    <ClInclude Include="source\CollisionComponent.h" />
     <ClInclude Include="source\GameCollision.h" />
     <ClInclude Include="source\AttackState.h" />
     <ClInclude Include="source\AttackManager.h" />
