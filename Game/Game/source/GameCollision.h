@@ -8,7 +8,6 @@ public:
 	virtual ~GameCollision();
 	void Update();
 	void CameraTerget();
-	void ObjectCollision();
 	//ÉQÉbÉ^Å[
 	static GameCollision* GetInstance() { return colInstance; }
 	bool GetLockOn() { return mIsLock; }

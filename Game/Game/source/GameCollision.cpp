@@ -21,7 +21,6 @@ GameCollision::~GameCollision()
 void GameCollision::Update()
 {
 	CameraTerget();
-	ObjectCollision();
 }
 
 void GameCollision::CameraTerget()
@@ -83,33 +82,4 @@ void GameCollision::CameraTerget()
 	}
 }
 
-void GameCollision::ObjectCollision()
-{
-	std::list<ObjectBase*> object_list = ObjectManager::GetInstance()->GetObjectList();
-	//最短距離初期化
-	float dist_captocap = 0;
-	for (auto&& obj_i : object_list)
-	{
-		for (auto&& obj_j : object_list)
-		{
-			if (obj_i == obj_j) { continue; }
-			Vector3D pos_i = obj_i->GetPos();
-			Vector3D pos_j = obj_j->GetPos();
-			//線分と線分の最短距離を求める際に使う変数。入れるだけでいいので実際、値は使っていない
-			Vector3D v1m = Vector3D(0.0, 0.0, 0.0);
-			Vector3D v2m = Vector3D(0.0, 0.0, 0.0);
-			double t1 = 0.0;
-			double t2 = 0.0;
-			dist_captocap = MyMath::DisSegAndSeg(pos_i, pos_i, v1m, t1, pos_j, pos_j, v2m, t2);
-			if (dist_captocap <= 40)
-			{
-				Vector3D v = pos_j - pos_i;
-				double len = v.Length();
-				len = 40 - len;
-				Vector3D norm = v.Normalize();
-				Vector3D pos = norm.Scale(len);
-				obj_j->SetPos(pos);
-			}
-		}
-	}
-}
+

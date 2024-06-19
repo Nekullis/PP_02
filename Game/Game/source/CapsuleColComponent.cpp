@@ -1,4 +1,5 @@
 #include "CapsuleColComponent.h"
+#include "CollisionManager.h"
 CapsuleColComponent* CapsuleColComponent::capInstance = nullptr;
 CapsuleColComponent::CapsuleColComponent(ObjectBase* owner, int updateowder) :CollisionComponent(owner, updateowder)
 {
@@ -15,4 +16,5 @@ CapsuleColComponent::~CapsuleColComponent()
 
 void CapsuleColComponent::Update()
 {
+	CollisionComponent::Update();
 }
