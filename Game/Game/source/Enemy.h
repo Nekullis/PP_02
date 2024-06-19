@@ -5,10 +5,10 @@ class Enemy : public Character
 public:
 	Enemy(ModeBase* game);
 	virtual ~Enemy();
-	void RegisterAnimation()override;
-	void Initialize()override;
-	void Process()override;
-	void Render()override;
+	virtual void RegisterAnimation()override;
+	virtual void Initialize()override;
+	virtual void Process()override;
+	virtual void Render()override;
 protected:
 };
 

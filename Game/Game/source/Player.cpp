@@ -39,27 +39,25 @@ void Player::Initialize()
 	//プレイヤー速度初期化
 	input->SetForwardSpeed(20);
 	//プレイヤー描画用コンポーネント追加
-	DrawComponent* draw = new DrawComponent(this);
+	mDraw = new DrawComponent(this);
 	//パスを入れておく
 	const char* pass = "res/Model/Character/Player/Player.mv1";
 	//セッターでパスを登録
-	draw->LoadPass(pass);
+	mDraw->LoadPass(pass);
 	//アニメーション用にモデルハンドル取得
-	mAnimHandle = draw->GetHandle();
+	mAnimHandle = mDraw->GetHandle();
 	//プレイヤーに描画用コンポーネント登録
-	mManager->AddDraw(draw);
+	mManager->AddDraw(mDraw);
 	//プレイヤーにカメラコンポーネント追加
 	CameraComponent* camera = new CameraComponent(this);
 	//衝突判定用コンポーネント追加
-	CapsuleColComponent* collision = new CapsuleColComponent(this);
-	//位置設定
-	collision->SetPos(mPos);
+	mCol = new CapsuleColComponent(this);
 	//半径設定
 	float rad = 30.0;
-	collision->SetRadius(rad);
+	mCol->SetRadius(rad);
 	//線分の長さ設定
 	float line_seg = 170.0;
-	collision->SetSeg(line_seg);
+	mCol->SetSeg(line_seg);
 }
 
 void Player::RegisterAnimation()
@@ -70,12 +68,18 @@ void Player::RegisterAnimation()
 void Player::Process()
 {
 	chara::Process();
+	//衝突判定用の位置設定
+	mCol->SetPos(mPos);
+	mDraw->SetPos(mPos);
+	//スティックが傾いているか
 	if (GameXPad::GetInstance()->IsInputStickLeft())
 	{
+		//アニメーションを歩きに
 		mAnimation = ANIMATION::WALK;
 	}
 	else
 	{
+		//アニメーションを待ちに
 		mAnimation = ANIMATION::WAIT;
 	}
 	//アニメーションが1フレーム前と違うのなら

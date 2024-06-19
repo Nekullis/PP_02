@@ -9,12 +9,13 @@ EnemyMob::EnemyMob(ModeBase* game) :Enemy(game)
 	mManager = ObjectManager::GetInstance();
 	//体力設定
 	_hp = 50;
+	mPos = Vector3D(-500, 100, 1000);
 	//待機状態に
 	mAnimation = ANIMATION::WAIT;
 	Initialize();
 	mAttachNum = 6;
 	RegisterAnimation();
-	//マネージャーにプレイヤー登録
+	//マネージャーに登録
 	mManager->Spawn(this);
 }
 
@@ -31,31 +32,32 @@ void EnemyMob::RegisterAnimation()
 void EnemyMob::Initialize()
 {
 	//描画用コンポーネント初期化
-	DrawComponent* draw = new DrawComponent(this);
+	mDraw = new DrawComponent(this);
 	//パスを入れておく
 	const char* pass = "res/Model/Character/Enemy/enemy.mv1";
 	//セッターでパスを登録
-	draw->LoadPass(pass);
+	mDraw->LoadPass(pass);
 	//アニメーション用にモデルハンドル取得
-	mAnimHandle = draw->GetHandle();
+	mAnimHandle = mDraw->GetHandle();
 	//プレイヤーに描画用コンポーネント登録
-	mManager->AddDraw(draw);
+	mManager->AddDraw(mDraw);
 	//衝突判定用コンポーネント追加
-	CapsuleColComponent* collision = new CapsuleColComponent(this);
-	//位置設定
-	collision->SetPos(mPos);
+	mCol = new CapsuleColComponent(this);
 	//半径設定
 	float rad = 30.0;
-	collision->SetRadius(rad);
+	mCol->SetRadius(rad);
 	//線分の長さ設定
 	float line_seg = 170.0;
-	collision->SetSeg(line_seg);
+	mCol->SetSeg(line_seg);
 
 }
 
 void EnemyMob::Process()
 {
 	Enemy::Process();
+	//位置設定
+	mCol->SetPos(mPos);
+	mDraw->SetPos(mPos);
 	//アニメーションが1フレーム前と違うのなら
 	if(mAnimation != oldAnimation)
 	{

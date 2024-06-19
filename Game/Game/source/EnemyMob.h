@@ -18,5 +18,7 @@ protected:
 	class ObjectManager* mManager;
 	ANIMATION mAnimation;
 	ANIMATION oldAnimation;
+	class CapsuleColComponent* mCol;
+	class DrawComponent* mDraw;
 };
 
