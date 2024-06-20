@@ -28,9 +28,9 @@ void ModeGame::Register()
 {
 	Player* player = new Player(this);
 	EnemyMob* mob_l = new EnemyMob(this);
-	//mob_l->SetPos(Vector3D(-500, 100, 1000));
-	/*EnemyMob* mob_r = new EnemyMob(this);
-	mob_r->SetPos(Vector3D(100, 100, 1000));*/
+	mob_l->SetPos(Vector3D(-500, 100, 1000));
+	//EnemyMob* mob_r = new EnemyMob(this);
+	//mob_r->SetPos(Vector3D(100, 100, 1000));
 	Stage* stage = new Stage(this);
 }
 

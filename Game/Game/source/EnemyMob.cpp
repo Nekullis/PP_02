@@ -9,7 +9,6 @@ EnemyMob::EnemyMob(ModeBase* game) :Enemy(game)
 	mManager = ObjectManager::GetInstance();
 	//‘Ì—Íİ’è
 	_hp = 50;
-	mPos = Vector3D(-500, 100, 1000);
 	//‘Ò‹@ó‘Ô‚É
 	mAnimation = ANIMATION::WAIT;
 	Initialize();

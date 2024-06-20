@@ -180,6 +180,7 @@
     <ClCompile Include="source\ObjectManager.cpp" />
     <ClCompile Include="source\Player.cpp" />
     <ClCompile Include="source\Stage.cpp" />
+    <ClCompile Include="source\Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\CapsuleColComponent.h" />
@@ -207,6 +208,7 @@
     <ClInclude Include="source\ObjectManager.h" />
     <ClInclude Include="source\Player.h" />
     <ClInclude Include="source\Stage.h" />
+    <ClInclude Include="source\Weapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -5,6 +5,7 @@
 #include "CameraComponent.h"
 #include "InputComponent.h"
 #include "CapsuleColComponent.h"
+#include "Weapon.h"
 
 Player* Player::plInstance = nullptr;
 Player::Player(ModeBase* game):chara(game)
@@ -21,6 +22,9 @@ Player::Player(ModeBase* game):chara(game)
 	Initialize();
 	mAttachNum = 0;
 	RegisterAnimation();
+	/*mWeapon = new Weapon(game);
+	float rad = 50.0;
+	mWeapon->SetRadius(rad);*/
 	//マネージャーにプレイヤー登録
 	mManager->Spawn(this);
 
@@ -28,6 +32,9 @@ Player::Player(ModeBase* game):chara(game)
 
 Player::~Player()
 {
+	delete mDraw;
+	delete mCol;
+	delete mWeapon;
 	MV1DetachAnim(mAnimHandle, mAnimAttachIndex);
 }
 
@@ -58,6 +65,7 @@ void Player::Initialize()
 	//線分の長さ設定
 	float line_seg = 170.0;
 	mCol->SetSeg(line_seg);
+	
 }
 
 void Player::RegisterAnimation()

@@ -32,5 +32,6 @@ protected:
 	class ObjectManager* mManager;
 	class CapsuleColComponent* mCol;
 	class DrawComponent* mDraw;
+	class Weapon* mWeapon;
 };
 
