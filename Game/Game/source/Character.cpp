@@ -4,7 +4,6 @@ Character::Character(ModeBase* game):base(game)
 {
 	_hp = 0;
 	mAttachNum = 0;
-	Initialize();
 }
 
 Character::~Character()
@@ -19,11 +18,6 @@ void Character::RegisterAnimation()
 	mAnimPlayTime = 0;
 	//‘Ä¶ŠÔæ“¾
 	mAnimTotalTime = MV1GetAttachAnimTotalTime(mAnimHandle, mAnimAttachIndex);
-}
-
-void Character::Initialize()
-{
-	
 }
 
 void Character::Process()

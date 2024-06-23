@@ -155,6 +155,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\DamageEffect.cpp" />
+    <ClCompile Include="source\PolygonEffect.cpp" />
+    <ClCompile Include="source\DrawPolygonComponent.cpp" />
+    <ClCompile Include="source\DrawBillboardComponent.cpp" />
     <ClCompile Include="source\CapsuleColComponent.cpp" />
     <ClCompile Include="source\CollisionManager.cpp" />
     <ClCompile Include="source\CollisionComponent.cpp" />
@@ -181,8 +185,14 @@
     <ClCompile Include="source\Player.cpp" />
     <ClCompile Include="source\Stage.cpp" />
     <ClCompile Include="source\Weapon.cpp" />
+    <ClCompile Include="source\TargetMaker.cpp" />
+    <ClCompile Include="source\WeaponColComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\DamageEffect.h" />
+    <ClInclude Include="source\PolygonEffect.h" />
+    <ClInclude Include="source\DrawPolygonComponent.h" />
+    <ClInclude Include="source\DrawBillboardComponent.h" />
     <ClInclude Include="source\CapsuleColComponent.h" />
     <ClInclude Include="source\CollisionManager.h" />
     <ClInclude Include="source\CollisionComponent.h" />
@@ -209,6 +219,8 @@
     <ClInclude Include="source\Player.h" />
     <ClInclude Include="source\Stage.h" />
     <ClInclude Include="source\Weapon.h" />
+    <ClInclude Include="source\TargetMaker.h" />
+    <ClInclude Include="source\WeaponColComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

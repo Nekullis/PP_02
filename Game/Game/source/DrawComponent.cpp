@@ -6,6 +6,7 @@ DrawComponent::DrawComponent(ObjectBase* owner, int updateowder) :Component(owne
 	mHandle = 0;
 	mPass = "";
 	mPos = Vector3D(0.0, 0.0, 0.0);
+	mScale = Vector3D(1.0, 1.0, 1.0);
 }
 
 DrawComponent::~DrawComponent()
@@ -21,8 +22,8 @@ void DrawComponent::LoadPass(const char* pass)
 void DrawComponent::Update()
 {
 	Component::Update();
-	//mPos = mOwner->GetPos();
 	MV1SetPosition(mHandle, mPos.dxl());
+	MV1SetScale(mHandle, mScale.dxl());
 	MV1SetRotationXYZ(mHandle, mOwner->GetRotation().dxl());
 	MV1DrawModel(mHandle);
 }

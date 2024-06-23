@@ -1,8 +1,6 @@
 #pragma once
 #include "AppFrame.h"
-#include "ObjectManager.h"
-#include "GameCollision.h"
-#include "CollisionManager.h"
+
 class ModeGame : public ModeBase
 {
 public:
@@ -12,10 +10,10 @@ public:
 	virtual bool Render();
 	void Register();
 	//ÉQÉbÉ^Å[
-	ObjectManager* GetManager() { return mObjManager; }
+	class ObjectManager* GetManager() { return mObjManager; }
 protected:
-	ObjectManager* mObjManager;
-	GameCollision* mGameCol;
-	CollisionManager* mColManager;
+	class ObjectManager* mObjManager;
+	class GameCollision* mGameCol;
+	class CollisionManager* mColManager;
 };
 

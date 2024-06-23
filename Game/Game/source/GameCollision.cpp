@@ -25,17 +25,14 @@ void GameCollision::Update()
 
 void GameCollision::CameraTerget()
 {
+	Vector3D tarpos = Vector3D(0.0, 0.0, 0.0);
 	CameraComponent* camera = CameraComponent::GetInstance();
 	GameXPad* pad = GameXPad::GetInstance();
 	std::list<ObjectBase*> object_list = ObjectManager::GetInstance()->GetObjectList();
 	//ロックオン用トリガが入力された
-	if (pad->GetXLt())
+	if (pad->GetXTrg(XINPUT_BUTTON_LEFT_THUMB)) { mIsLock = 1 - mIsLock; }
+	if (mIsLock)
 	{
-		//ロックオン状態なら解除
-		if (mIsLock)
-		{
-			mIsLock = false;
-		}
 		//カメラ位置を代入
 		Vector3D cam_s_dis = camera->GetPos();
 		//カメラ注視点回転角(y軸の回転行列)
@@ -44,7 +41,7 @@ void GameCollision::CameraTerget()
 		Vector3D add = Vector3D(0.0, 0.0, 2000.0);
 		//カメラ位置と差分の加算しそこに回転値を入れる
 		Vector3D cam_e_dis = cam_s_dis + add * rot_y;
-		// 最も近い敵を探すための距離
+		//最も近い敵を探すための距離
 		float closest_distance = FLT_MAX; 
 		Vector3D closest_enemy_pos;
 		//線分と線分の最短距離を求める際に使う変数。入れるだけでいいので実際、値は使っていない
@@ -55,8 +52,8 @@ void GameCollision::CameraTerget()
 		//オブジェクトの数だけ回す
 		for (auto&& obj : object_list)
 		{
-			//プレイヤーは候補に入れない
-			if (obj->GetPos() == Player::GetInstance()->GetPos()|| obj->GetPos() == Stage::GetInstance()->GetPos()) { continue; }
+			//敵以外は候補に入れない
+			if (!obj->GetIsTarget()) { continue; }
 			//敵の位置
 			Vector3D enemy_pos = obj->GetPos();
 			//敵の高さを考慮
@@ -74,12 +71,10 @@ void GameCollision::CameraTerget()
 				mIsLock = true;
 			}
 		}
-		if(mIsLock)
-		{
-			//最も近い敵をターゲット
-			mCamTarget = closest_enemy_pos; 
-		}
+		//最も近い敵をターゲット
+		mCamTarget = closest_enemy_pos;
 	}
+	
 }
 
 

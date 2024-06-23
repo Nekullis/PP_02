@@ -13,15 +13,17 @@ public:
 	//ìoò^
 	void Spawn(ObjectBase* obj);
 	void AddDraw(class DrawComponent* draw);
+	void AddBillboard(class DrawBillboardComponent* billboard);
 	//è¡ãé
 	void Destroy(ObjectBase* obj);
 	//ÉQÉbÉ^Å[
-	std::list<ObjectBase*> GetObjectList() { return _objectList; }
+	std::list<ObjectBase*> GetObjectList() { return mObjectList; }
 	//std::list<class DrawComponent*> GetDrawList() { return _drawList; }
 	static ObjectManager* GetInstance() { return obInstance; }
 
 protected:
-	std::list<ObjectBase*> _objectList;
-	std::list<class DrawComponent*> _drawList;
+	std::list<ObjectBase*> mObjectList;
+	std::list<class DrawComponent*> mDrawList;
+	std::list<class DrawBillboardComponent*> mBillboardList;
 };
 

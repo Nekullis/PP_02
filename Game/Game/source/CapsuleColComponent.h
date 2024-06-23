@@ -7,13 +7,13 @@ public:
 	static CapsuleColComponent* capInstance;
 	CapsuleColComponent(class ObjectBase* owner, int updateowder = 200);
 	virtual ~CapsuleColComponent();
-	void Update()override;
+	virtual void Update()override;
 	//ゲッター
 	static CapsuleColComponent* GetInstance() { return capInstance; }
-	float GetSeg() { return mLineSeg; }
+	Vector3D GetTopPos() { return mTopPos; }
 	//セッター
-	void SetSeg(float seg) { mLineSeg = seg; }
+	void SetTopPos(Vector3D pos) { mTopPos = pos; }
 protected:
-	float mLineSeg;
+	Vector3D mTopPos;
 };
 

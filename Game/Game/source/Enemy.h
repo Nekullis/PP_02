@@ -6,7 +6,6 @@ public:
 	Enemy(ModeBase* game);
 	virtual ~Enemy();
 	virtual void RegisterAnimation()override;
-	virtual void Initialize()override;
 	virtual void Process()override;
 	virtual void Render()override;
 protected:

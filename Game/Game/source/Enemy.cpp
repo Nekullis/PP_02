@@ -3,14 +3,11 @@
 
 Enemy::Enemy(ModeBase* game) : Character(game)
 {
+	mIsTargetting = true;
 	RegisterAnimation();
 }
 
 Enemy::~Enemy()
-{
-}
-
-void Enemy::Initialize()
 {
 }
 

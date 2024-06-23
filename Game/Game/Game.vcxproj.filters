@@ -55,6 +55,12 @@
     <Filter Include="ヘッダー ファイル\Manager">
       <UniqueIdentifier>{425b0b30-fd0b-4c90-8344-ba59ea72dd50}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Component\Draw">
+      <UniqueIdentifier>{f2efbe70-aaf5-4d56-8708-fc0b0030ca9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Component\Draw">
+      <UniqueIdentifier>{2f12d2de-22ab-45e4-9932-b8b0d4e40c26}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\AIAttack.cpp">
@@ -80,9 +86,6 @@
     </ClCompile>
     <ClCompile Include="source\Player.cpp">
       <Filter>ソース ファイル\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="source\DrawComponent.cpp">
-      <Filter>ソース ファイル\Component</Filter>
     </ClCompile>
     <ClCompile Include="source\MoveComponent.cpp">
       <Filter>ソース ファイル\Component</Filter>
@@ -135,6 +138,27 @@
     <ClCompile Include="source\Weapon.cpp">
       <Filter>ソース ファイル\Object</Filter>
     </ClCompile>
+    <ClCompile Include="source\TargetMaker.cpp">
+      <Filter>ソース ファイル\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\WeaponColComponent.cpp">
+      <Filter>ソース ファイル\Component\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="source\DrawBillboardComponent.cpp">
+      <Filter>ソース ファイル\Component\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="source\DrawComponent.cpp">
+      <Filter>ソース ファイル\Component\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="source\DrawPolygonComponent.cpp">
+      <Filter>ソース ファイル\Component\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="source\PolygonEffect.cpp">
+      <Filter>ソース ファイル\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\DamageEffect.cpp">
+      <Filter>ソース ファイル\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\AIAttack.h">
@@ -163,9 +187,6 @@
     </ClInclude>
     <ClInclude Include="source\Stage.h">
       <Filter>ヘッダー ファイル\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="source\DrawComponent.h">
-      <Filter>ヘッダー ファイル\Component</Filter>
     </ClInclude>
     <ClInclude Include="source\MoveComponent.h">
       <Filter>ヘッダー ファイル\Component</Filter>
@@ -213,6 +234,27 @@
       <Filter>ヘッダー ファイル\Manager</Filter>
     </ClInclude>
     <ClInclude Include="source\Weapon.h">
+      <Filter>ヘッダー ファイル\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="source\TargetMaker.h">
+      <Filter>ヘッダー ファイル\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="source\WeaponColComponent.h">
+      <Filter>ヘッダー ファイル\Component\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="source\DrawBillboardComponent.h">
+      <Filter>ヘッダー ファイル\Component\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="source\DrawComponent.h">
+      <Filter>ヘッダー ファイル\Component\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="source\DrawPolygonComponent.h">
+      <Filter>ヘッダー ファイル\Component\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="source\PolygonEffect.h">
+      <Filter>ヘッダー ファイル\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="source\DamageEffect.h">
       <Filter>ヘッダー ファイル\Object</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,5 +1,5 @@
 #pragma once
-#include"AppFrame.h"
+#include "AppFrame.h"
 #include "Player.h"
 class AttackState
 {
@@ -20,8 +20,6 @@ public:
 		float mColStartFrame;
 		//攻撃判定終了フレーム
 		float mColEndFrame;
-		//衝突判定位置(線分)
-		Vector3D mColPos[2];
 		//衝突判定範囲
 		float mColRadius;
 		//派生可能か
@@ -31,7 +29,7 @@ public:
 	virtual ~AttackState();
 	void Update();
 	//ゲッター
-	ATTACK GetAttack() { return mAttack; }
+	ATTACK GetState() { return mAttack; }
 	//セッター
 	void SetState(ATTACK attack) { mAttack = attack; }
 protected:

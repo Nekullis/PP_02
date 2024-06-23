@@ -6,8 +6,6 @@ CapsuleColComponent::CapsuleColComponent(ObjectBase* owner, int updateowder) :Co
 	capInstance = this;
 	//ƒ^ƒCƒv‰Šú‰»
 	mType = COLLISIONTYPE::CAPSULE;
-	//ü•ª‚Ì’·‚³‰Šú‰»
-	mLineSeg = 0.0;
 }
 
 CapsuleColComponent::~CapsuleColComponent()

@@ -1,18 +1,22 @@
 #include "AttackManager.h"
 #include "Player.h"
+
+AttackManager* AttackManager::atkManaInstance = nullptr;
 AttackManager::AttackManager()
 {
-	mState = new AttackState();
+	atkManaInstance = this;
+	mState = AttackState();
 	mAttackCnt = 0;
 	mNowNum = 0;
 	mChangeFrag = false;
+	AttackMotionChange(0);
 }
 
 AttackManager::~AttackManager()
 {
 }
 
-void AttackManager::AddAttack(int num ,AttackState* state)
+void AttackManager::AddAttack(int num ,AttackState state)
 {
 	//コンテナに格納する
 	mAttackList.emplace(num,state);
@@ -26,7 +30,7 @@ void AttackManager::AttackMotionChange(int num)
 	{
 		//対応キーが見つかったら対応要素を代入する
 		mState = itr->second;
-		if (num != 0) { Player::GetInstance()->SetAnimation(mState->GetAttack().mAnimation); }
+		if (num != 0) { Player::GetInstance()->SetAnimation(mState.GetState().mAnimation); }
 		//カウントリセット
 		mAttackCnt = 0;
 	}
@@ -40,7 +44,7 @@ void AttackManager::Update()
 	//カウントを増やす
 	if (mNowNum != 0) { mAttackCnt++; }
 	//フレームカウントが入力猶予フレーム内ならば
-	if (mAttackCnt >= mState->GetAttack().mPushStartFrame && mAttackCnt <= mState->GetAttack().mPushEndFrame)
+	if (mAttackCnt >= mState.GetState().mPushStartFrame && mAttackCnt <= mState.GetState().mPushEndFrame)
 	{
 		//ボタン入力フラグをtureに
 		push_flag = true;
@@ -59,14 +63,15 @@ void AttackManager::Update()
 	if (mChangeFrag)
 	{	
 		//モーションが切り替わるフレームカウントに到達した
-		if (mAttackCnt >= mState->GetAttack().mMotionChangeFrame)
+		if (mAttackCnt >= mState.GetState().mMotionChangeFrame)
 		{
 			//かつその攻撃が派生可能の時
-			if (mState->GetAttack().mIsDerivation)
+			if (mState.GetState().mIsDerivation)
 			{
 				//攻撃番号を加算
 				mNowNum++;
 				AttackMotionChange(mNowNum);
+				mChangeFrag = false;
 			}
 		}
 	}
@@ -75,7 +80,7 @@ void AttackManager::Update()
 	{
 	}
 	//何も入力せずにトータルフレームに達した
-	if (mAttackCnt == mState->GetAttack().mMotionTotalFrame)
+	if (mAttackCnt == mState.GetState().mMotionTotalFrame)
 	{
 		//攻撃番号を0に
 		mNowNum = 0;
@@ -84,4 +89,21 @@ void AttackManager::Update()
 		//カウントリセット
 		mAttackCnt = 0;
 	}
+}
+
+bool AttackManager::IsAttack()
+{
+	//カウントが衝突判定時間内ならば
+	if (mAttackCnt >= mState.GetState().mColStartFrame && mAttackCnt <= mState.GetState().mColEndFrame)
+	{
+		//trueを返す
+		return true;
+	}
+	return false;
+}
+
+bool AttackManager::IsAttackMotion()
+{
+	if (mNowNum != 0) {return true;}
+	return false;
 }

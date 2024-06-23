@@ -6,8 +6,8 @@ CollisionComponent::CollisionComponent(ObjectBase* owner, int updateowder) :Comp
 	mOwner = owner;
 	mManager = CollisionManager::GetInstance();
 	mType = COLLISIONTYPE::NONE;
-	mPos = Vector3D(0, 0, 0);
 	mRadius = 0;
+	mLineSeg = 0;
 	mManager->AddCollision(this);
 
 }

@@ -13,7 +13,6 @@ public:
 	Character(ModeBase* game);
 	virtual ~Character();
 	virtual void RegisterAnimation();
-	void Initialize()override;
 	void Process()override;
 	void Render()override;
 	//ÉQÉbÉ^Å[

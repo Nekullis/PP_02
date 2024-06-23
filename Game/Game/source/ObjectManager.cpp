@@ -1,5 +1,6 @@
 #include "ObjectManager.h"
 #include "DrawComponent.h"
+#include "DrawBillboardComponent.h"
 ObjectManager* ObjectManager::obInstance = nullptr;
 ObjectManager::ObjectManager()
 {
@@ -13,18 +14,23 @@ ObjectManager::~ObjectManager()
 void ObjectManager::Spawn(ObjectBase* obj)
 {
 	//コンテナへオブジェクトを入れる
-	_objectList.push_back(obj);
+	mObjectList.push_back(obj);
 }
 
 void ObjectManager::AddDraw(DrawComponent* draw)
 {
-	_drawList.push_back(draw);
+	mDrawList.push_back(draw);
+}
+
+void ObjectManager::AddBillboard(DrawBillboardComponent* billboard)
+{
+	mBillboardList.push_back(billboard);
 }
 
 void ObjectManager::Destroy(ObjectBase* obj)
 {
 	//コンテナ内のオブジェクトの削除
-	_objectList.remove(obj);
+	mObjectList.remove(obj);
 	delete obj;
 }
 
@@ -32,7 +38,7 @@ void ObjectManager::Process()
 {
 	//一時的なコンテナの作成
 	std::list<ObjectBase*> temp_remove;
-	for (auto&& object : _objectList)
+	for (auto&& object : mObjectList)
 	{
 		//オブジェクトのプロセス
 		object->Process();
@@ -49,8 +55,12 @@ void ObjectManager::Process()
 void ObjectManager::Render()
 {
 	//登録されているオブジェクトの描画
-	for (auto&& draw : _drawList)
+	for (auto&& draw : mDrawList)
 	{
 		draw->Update();
+	}
+	for (auto&& billboard : mBillboardList)
+	{
+		billboard->Update();
 	}
 }

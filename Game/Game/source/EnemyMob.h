@@ -11,7 +11,6 @@ public:
 	EnemyMob(ModeBase* game);
 	virtual ~EnemyMob();
 	void RegisterAnimation()override;
-	void Initialize()override;
 	void Process()override;
 	void Render()override;
 protected:

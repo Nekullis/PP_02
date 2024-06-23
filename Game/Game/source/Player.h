@@ -18,7 +18,6 @@ public:
 	Player(ModeBase* game);
 	virtual ~Player();
 	void RegisterAnimation()override;
-	void Initialize()override;
 	void Process()override;
 	void Render()override;
 	//ゲッター
@@ -29,9 +28,11 @@ protected:
 	//ステータス
 	ANIMATION mAnimation;
 	ANIMATION oldAnimation;
+	//クラス
 	class ObjectManager* mManager;
 	class CapsuleColComponent* mCol;
 	class DrawComponent* mDraw;
 	class Weapon* mWeapon;
+	class AttackManager* mAtkManager;
 };
 
