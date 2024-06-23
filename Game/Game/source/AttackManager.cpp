@@ -94,11 +94,15 @@ void AttackManager::Update()
 bool AttackManager::IsAttack()
 {
 	//ƒJƒEƒ“ƒg‚ªÕ“Ë”»’èŽžŠÔ“à‚È‚ç‚Î
-	if (mAttackCnt >= mState.GetState().mColStartFrame && mAttackCnt <= mState.GetState().mColEndFrame)
+	if (mNowNum != 0)
 	{
-		//true‚ð•Ô‚·
-		return true;
+		if (mAttackCnt >= mState.GetState().mColStartFrame && mAttackCnt <= mState.GetState().mColEndFrame)
+		{
+			//true‚ð•Ô‚·
+			return true;
+		}
 	}
+	
 	return false;
 }
 

@@ -18,10 +18,10 @@ DrawPolygonComponent::~DrawPolygonComponent()
 void DrawPolygonComponent::Update()
 {
 	if (!mUseFlag) { return; }
-	if (mNowPlayTime >= mPlayTotalTime) { mUseFlag = false; }
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, mColorAlpha);
 	DrawPolygonIndexed3D(mVertex.data(), mVertexCnt, mIndex.data(), mIndexCnt, DX_NONE_GRAPH, TRUE);
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+
 }
 
 void DrawPolygonComponent::SetVertex(std::vector<VERTEX3D>& vertex)

@@ -5,6 +5,7 @@
 #include "TargetMaker.h"
 #include "ObjectManager.h"
 #include "GameCollision.h"
+#include "DamageEffect.h"
 #include "CollisionManager.h"
 bool ModeGame::Initialize()
 {
@@ -36,6 +37,7 @@ void ModeGame::Register()
 	//敵追加
 	EnemyMob* mob_l = new EnemyMob(this);
 	mob_l->SetPos(Vector3D(-500, 100, 1000));
+	mDamageEffect = new DamageEffect(this);
 	//ステージ追加
 	Stage* stage = new Stage(this);
 }

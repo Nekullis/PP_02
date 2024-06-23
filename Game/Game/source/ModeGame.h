@@ -15,5 +15,6 @@ protected:
 	class ObjectManager* mObjManager;
 	class GameCollision* mGameCol;
 	class CollisionManager* mColManager;
+	class DamageEffect* mDamageEffect;
 };
 

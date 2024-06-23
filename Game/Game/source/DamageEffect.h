@@ -3,6 +3,7 @@
 class DamageEffect : public PolygonEffect
 {
 public:
+	static DamageEffect* dmgInstance;
 	struct PARTICLE
 	{
 		Vector3D Pos;
@@ -14,7 +15,10 @@ public:
 	void Start(int allpolynum);
 	void Process()override;
 	void Render()override;
+	//ゲッター
+	static DamageEffect* GetInstance() { return dmgInstance; }
 protected:
+	class ObjectManager* mManager;
 	class DrawPolygonComponent* mDrawPoly;
 	std::vector<PARTICLE> mParticleList;
 	//使用可能フラグ

@@ -2,6 +2,8 @@
 #include "CapsuleColComponent.h"
 #include "WeaponColComponent.h"
 #include "AttackManager.h"
+#include "DamageEffect.h"
+#include "ModeGame.h"
 #include <iostream>
 CollisionManager* CollisionManager::colMaInstance = nullptr;
 CollisionManager::CollisionManager()
@@ -100,7 +102,10 @@ void CollisionManager::Update()
 						//‚©‚ÂUŒ‚’†‚ÌŽž
 						if (AttackManager::GetInstance()->IsAttack())
 						{
-							Vector3D closet_pos = v2m - v1m;
+							Vector3D closet_pos = v2m;
+							DamageEffect* effect = DamageEffect::GetInstance();
+							effect->SetPos(closet_pos);
+							effect->Start(50);
 
 						}
 					}
