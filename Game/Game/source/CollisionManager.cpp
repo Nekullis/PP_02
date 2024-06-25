@@ -17,7 +17,7 @@ CollisionManager::~CollisionManager()
 
 void CollisionManager::AddCollision(CollisionComponent* col)
 {
-	mCollisionList.push_back(col);
+	mCollisionList.emplace_back(col);
 }
 
 void CollisionManager::Delete()
@@ -27,6 +27,7 @@ void CollisionManager::Delete()
 
 void CollisionManager::Update()
 {
+	DamageEffect* effect = new DamageEffect(ModeGame::GetInstance());
 	float dist_captocap = 0.0;
 	float seg = 170.0;;
 	//ü•ª‚Æü•ª‚ÌÅ’Z‹——£‚ğ‹‚ß‚éÛ‚Ég‚¤•Ï”B
@@ -103,10 +104,8 @@ void CollisionManager::Update()
 						if (AttackManager::GetInstance()->IsAttack())
 						{
 							Vector3D closet_pos = v2m;
-							DamageEffect* effect = DamageEffect::GetInstance();
 							effect->SetPos(closet_pos);
 							effect->Start(50);
-
 						}
 					}
 				}

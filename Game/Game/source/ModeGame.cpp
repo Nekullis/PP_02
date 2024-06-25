@@ -7,8 +7,11 @@
 #include "GameCollision.h"
 #include "DamageEffect.h"
 #include "CollisionManager.h"
+
+ModeGame* ModeGame::gameInstance = nullptr;
 bool ModeGame::Initialize()
 {
+	gameInstance = this;
 	if (!ModeBase::Initialize()) { return false; }
 	//オブジェクトマネージャー初期化
 	mObjManager = new ObjectManager();
@@ -32,7 +35,7 @@ void ModeGame::Register()
 {
 	//プレイヤー追加
 	Player* player = new Player(this);
-	//
+	//マーカー追加
 	TargetMaker* maker = new TargetMaker(this);
 	//敵追加
 	EnemyMob* mob_l = new EnemyMob(this);

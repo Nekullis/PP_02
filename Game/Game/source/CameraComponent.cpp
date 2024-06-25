@@ -16,6 +16,7 @@ CameraComponent::CameraComponent(ObjectBase* owner, int updateowder) : Component
 	mFar = 50000;
 	//ゲームパッドの取得
 	mPad = GameXPad::GetInstance();
+	mOwner->AddComponent(this);
 }
 
 CameraComponent::~CameraComponent()

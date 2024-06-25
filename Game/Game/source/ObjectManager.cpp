@@ -14,17 +14,17 @@ ObjectManager::~ObjectManager()
 void ObjectManager::Spawn(ObjectBase* obj)
 {
 	//コンテナへオブジェクトを入れる
-	mObjectList.push_back(obj);
+	mObjectList.emplace_back(obj);
 }
 
 void ObjectManager::AddDraw(DrawComponent* draw)
 {
-	mDrawList.push_back(draw);
+	mDrawList.emplace_back(draw);
 }
 
 void ObjectManager::AddBillboard(DrawBillboardComponent* billboard)
 {
-	mBillboardList.push_back(billboard);
+	mBillboardList.emplace_back(billboard);
 }
 
 void ObjectManager::Destroy(ObjectBase* obj)

@@ -19,7 +19,7 @@ public:
 	void SetUseFlag(bool flag) { mUseFlag = flag; }
 	void SetVertex(std::vector<VERTEX3D>& vertex);
 	void SetIndeex(std::vector<unsigned short>& index);
-	void SetColor(COLOR_U8 color, int alpha);
+	void SetAlpha(int alpha){ mColorAlpha = alpha; }
 	void SetTotalTime(float time) { mPlayTotalTime = time; }
 	void SetPlayTime(float time) { mNowPlayTime = time; }
 protected:

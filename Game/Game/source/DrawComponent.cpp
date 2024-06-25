@@ -1,4 +1,5 @@
 #include "DrawComponent.h"
+#include "ObjectManager.h"
 #include "ModeGame.h"
 DrawComponent::DrawComponent(ObjectBase* owner, int updateowder) :Component(owner, updateowder)
 {
@@ -7,6 +8,7 @@ DrawComponent::DrawComponent(ObjectBase* owner, int updateowder) :Component(owne
 	mPass = "";
 	mPos = Vector3D(0.0, 0.0, 0.0);
 	mScale = Vector3D(1.0, 1.0, 1.0);
+	ObjectManager::GetInstance()->AddDraw(this);
 }
 
 DrawComponent::~DrawComponent()

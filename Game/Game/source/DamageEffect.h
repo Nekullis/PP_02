@@ -6,6 +6,7 @@ public:
 	static DamageEffect* dmgInstance;
 	struct PARTICLE
 	{
+		bool UseFlag;
 		Vector3D Pos;
 		Vector3D Velocity;
 		COLOR_U8 Color;

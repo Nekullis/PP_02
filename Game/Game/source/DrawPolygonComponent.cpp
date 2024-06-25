@@ -1,12 +1,12 @@
 #include "DrawPolygonComponent.h"
-#include "ObjectManager.h"
+
 
 DrawPolygonComponent::DrawPolygonComponent(ObjectBase* owner, int updateowder) :DrawComponent(owner, updateowder)
 {
 	mUseFlag = false;
 	mPlayTotalTime = 0.0;
 	mColorAlpha = 255;
-	ObjectManager::GetInstance()->AddDraw(this);
+	
 }
 
 DrawPolygonComponent::~DrawPolygonComponent()
@@ -17,10 +17,12 @@ DrawPolygonComponent::~DrawPolygonComponent()
 
 void DrawPolygonComponent::Update()
 {
+	SetUseLighting(false);
 	if (!mUseFlag) { return; }
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, mColorAlpha);
 	DrawPolygonIndexed3D(mVertex.data(), mVertexCnt, mIndex.data(), mIndexCnt, DX_NONE_GRAPH, TRUE);
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+	SetUseLighting(true);
 
 }
 
@@ -34,10 +36,4 @@ void DrawPolygonComponent::SetIndeex(std::vector<unsigned short>& index)
 {
 	this->mIndex = index;
 	this->mIndexCnt = index.size() / 3;
-}
-
-void DrawPolygonComponent::SetColor(COLOR_U8 color, int alpha)
-{
-	this->mColor = color;
-	this->mColorAlpha = alpha;
 }

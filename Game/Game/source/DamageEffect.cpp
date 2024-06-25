@@ -7,7 +7,7 @@ DamageEffect::DamageEffect(ModeBase* game) :PolygonEffect(game)
 {
 	dmgInstance = this;
 	mManager = ObjectManager::GetInstance();
-	mPlayTotalTime = 120;
+	mPlayTotalTime = 60;
 	
 	mColorAlpha = 255;
 	mManager->Spawn(this);
@@ -22,6 +22,11 @@ DamageEffect::~DamageEffect()
 
 void DamageEffect::Start(int allpolynum)
 {
+	if (mDrawPoly != nullptr)
+	{
+		delete mDrawPoly;
+		mDrawPoly = nullptr;
+	}
 	mParticleList.clear();
 	mNowPlayTime = 0;
 	mUseFlag = true;
@@ -32,7 +37,7 @@ void DamageEffect::Start(int allpolynum)
 		particle.Velocity._x = (float)(rand() % 20 - 10);
 		particle.Velocity._y = (float)(rand() % 20 - 10);
 		particle.Velocity._z = (float)(rand() % 20 - 10);
-		COLOR_U8 color = GetColorU8(255, rand() % 256, rand() % 256, mColorAlpha);
+		COLOR_U8 color = GetColorU8(255, rand() % 10, rand() % 10, mColorAlpha);
 		particle.Color = color;
 		mParticleList.push_back(particle);
 	}
@@ -51,9 +56,9 @@ void DamageEffect::Process()
 	}
 	for (auto&& particle : mParticleList)
 	{
-		particle.Pos._x = particle.Velocity._x * 0.1;
-		particle.Pos._y = particle.Velocity._y * 0.1;
-		particle.Pos._z = particle.Velocity._z * 0.1;
+		particle.Pos._x += particle.Velocity._x * 0.5;
+		particle.Pos._y += particle.Velocity._y * 0.5;
+		particle.Pos._z += particle.Velocity._z * 0.5;
 	}
 	int alpha = 255 * ((mPlayTotalTime - mNowPlayTime) / mPlayTotalTime);
 	std::vector<VERTEX3D> vertices;
@@ -79,6 +84,8 @@ void DamageEffect::Process()
 	mDrawPoly->SetIndeex(index);
 	mDrawPoly->SetTotalTime(mPlayTotalTime);
 	mDrawPoly->SetPlayTime(mNowPlayTime);
+	mDrawPoly->SetUseFlag(mUseFlag);
+	mDrawPoly->SetAlpha(alpha);
 }
 
 void DamageEffect::Render()

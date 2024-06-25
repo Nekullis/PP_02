@@ -2,6 +2,7 @@
 #include "AIState.h"
 AIComponent::AIComponent(ObjectBase* owner, int updateowder) :Component(owner, updateowder)
 {
+	mOwner->AddComponent(this);
 }
 
 AIComponent::~AIComponent()
