@@ -8,7 +8,8 @@ public:
 	virtual ~ApplicationGlobal();
 	//‰Šú‰»
 	bool Init();
-	class ResourceManager mResManager;
+	class ResourceManager* mResManager;
+	class GameXPad* mPad;
 	//ƒ[ƒh‚Å‚«‚Ä‚¢‚é‚©
 	bool _isLoad;
 };

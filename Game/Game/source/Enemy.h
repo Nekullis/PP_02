@@ -8,6 +8,7 @@ public:
 	virtual void RegisterAnimation()override;
 	virtual void Process()override;
 	virtual void Render()override;
+	virtual void Damage(Vector3D pos);
 protected:
 };
 

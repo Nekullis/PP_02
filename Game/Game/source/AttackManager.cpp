@@ -1,4 +1,5 @@
 #include "AttackManager.h"
+#include "GameCollision.h"
 #include "Player.h"
 
 AttackManager* AttackManager::atkManaInstance = nullptr;
@@ -57,6 +58,18 @@ void AttackManager::Update()
 		{
 			//モーション変更フラグをtrueに
 			mChangeFrag = true;
+			if (GameCollision::GetInstance()->GetLockOn())
+			{
+				Vector3D sub = GameCollision::GetInstance()->GetTarget() - Player::GetInstance()->GetPos();
+				if (sub.Length() <= 1000)
+				{
+					Vector3D norm = sub.Normalize();
+					double len = sub.Length() * 0.5;
+					Vector3D scale = norm.Scale(len);
+					Vector3D add = Player::GetInstance()->GetPos() + scale;
+					if (sub.Length() >= 200) { Player::GetInstance()->SetPos(add); }
+				}
+			}
 		}
 	}
 	//モーション変更フラグがtrueの時

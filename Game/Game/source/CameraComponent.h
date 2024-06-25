@@ -27,5 +27,12 @@ protected:
 	float mNear;
 	//Å’·•`‰æ‹——£
 	float mFar;
+	//‚Î‚Ë’è”
+	float mSpring;
+	//Œ¸Š’è”
+	float mDampFactor;
+	//ˆÊ’u‚Æ‘¬“x
+	Vector3D mCurrentPos;
+	Vector3D mCurrentVelocity;
 };
 

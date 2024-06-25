@@ -3,6 +3,7 @@
 #include "WeaponColComponent.h"
 #include "AttackManager.h"
 #include "DamageEffect.h"
+#include "EnemyMob.h"
 #include "ModeGame.h"
 #include <iostream>
 CollisionManager* CollisionManager::colMaInstance = nullptr;
@@ -27,7 +28,7 @@ void CollisionManager::Delete()
 
 void CollisionManager::Update()
 {
-	DamageEffect* effect = new DamageEffect(ModeGame::GetInstance());
+	
 	float dist_captocap = 0.0;
 	float seg = 170.0;;
 	//ü•ª‚Æü•ª‚ÌÅ’Z‹——£‚ğ‹‚ß‚éÛ‚Ég‚¤•Ï”B
@@ -93,7 +94,7 @@ void CollisionManager::Update()
 				pos_j_s = col_j->GetPos();
 				pos_j_e = col_j->GetPos() + Vector3D(0.0, seg, 0.0);
 				//ü•ª‚Æü•ª‚ÌÅ’Z‹——£‚ğ‹‚ß‚é
-				dist_captocap = MyMath::DisSegAndSeg(pos_i_s, pos_i_e, v1m, t1, pos_j_s, pos_j_e, v2m, t2);
+				dist_captocap = MyMath::DisSegAndSeg(pos_i_s, pos_i_e, v1m, t1, pos_j_s, pos_j_e, mHitPos, t2);
 				//Å’Z‹——£‚ª‡Œv”¼Œa‚æ‚è‚à¬‚³‚¢‚Æ‚«
 				if (dist_captocap <= add_rad)
 				{
@@ -103,9 +104,8 @@ void CollisionManager::Update()
 						//‚©‚ÂUŒ‚’†‚Ì
 						if (AttackManager::GetInstance()->IsAttack())
 						{
-							Vector3D closet_pos = v2m;
-							effect->SetPos(closet_pos);
-							effect->Start(50);
+							EnemyMob* enemy = dynamic_cast<EnemyMob*>(col_j->GetOwner());
+							enemy->Damage(col_i->GetOwner()->GetPos());
 						}
 					}
 				}

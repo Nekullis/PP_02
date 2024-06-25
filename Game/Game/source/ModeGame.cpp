@@ -7,12 +7,14 @@
 #include "GameCollision.h"
 #include "DamageEffect.h"
 #include "CollisionManager.h"
+#include "ModeGameClear.h"
 
 ModeGame* ModeGame::gameInstance = nullptr;
 bool ModeGame::Initialize()
 {
 	gameInstance = this;
 	if (!ModeBase::Initialize()) { return false; }
+	mGameClearFlag = false;
 	//オブジェクトマネージャー初期化
 	mObjManager = new ObjectManager();
 	//コリジョン系統のクラス初期化
@@ -28,21 +30,24 @@ bool ModeGame::Terminate()
 	delete mObjManager;
 	delete mGameCol;
 	delete mColManager;
+	delete mPlayer;
+	delete mEnemy;
+	delete mStage;
 	return true;
 }
 
 void ModeGame::Register()
 {
 	//プレイヤー追加
-	Player* player = new Player(this);
-	//マーカー追加
-	TargetMaker* maker = new TargetMaker(this);
+	mPlayer = new Player(this);
+	////マーカー追加
+	//TargetMaker* maker = new TargetMaker(this);
 	//敵追加
-	EnemyMob* mob_l = new EnemyMob(this);
-	mob_l->SetPos(Vector3D(-500, 100, 1000));
+	mEnemy = new EnemyMob(this);
+	mEnemy->SetPos(Vector3D(-500, 100, 1000));
 	mDamageEffect = new DamageEffect(this);
 	//ステージ追加
-	Stage* stage = new Stage(this);
+	mStage = new Stage(this);
 }
 
 bool ModeGame::Process()
@@ -52,6 +57,13 @@ bool ModeGame::Process()
 	mColManager->Update();
 	mObjManager->Process();
 	mGameCol->Update();
+	if (mGameClearFlag)
+	{
+		// このモードを削除予約
+		ModeServer::GetInstance()->Del(this);
+		// 次のモードを登録
+		ModeServer::GetInstance()->Add(new ModeGameClear(), 1, "clear");
+	}
 	return true;
 }
 

@@ -155,6 +155,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\ModeGameOver.cpp" />
+    <ClCompile Include="source\ModeGameClear.cpp" />
     <ClCompile Include="source\DamageEffect.cpp" />
     <ClCompile Include="source\PolygonEffect.cpp" />
     <ClCompile Include="source\DrawPolygonComponent.cpp" />
@@ -189,6 +191,8 @@
     <ClCompile Include="source\WeaponColComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\ModeGameOver.h" />
+    <ClInclude Include="source\ModeGameClear.h" />
     <ClInclude Include="source\DamageEffect.h" />
     <ClInclude Include="source\PolygonEffect.h" />
     <ClInclude Include="source\DrawPolygonComponent.h" />

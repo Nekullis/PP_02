@@ -14,7 +14,9 @@ public:
 	void Delete();
 	//ÉQÉbÉ^Å[
 	static CollisionManager* GetInstance() { return colMaInstance; }
+	Vector3D GetHitPos() { return mHitPos; }
 protected:
 	std::list<CollisionComponent*> mCollisionList;
+	Vector3D mHitPos;
 };
 

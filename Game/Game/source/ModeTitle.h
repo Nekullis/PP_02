@@ -11,5 +11,6 @@ public:
 	virtual bool Render();
 protected:
 	int mHandle;
+	class GameXPad* mPad;
 };
 

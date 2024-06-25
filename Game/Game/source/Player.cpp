@@ -15,13 +15,13 @@ Player::Player(ModeBase* game):chara(game)
 {
 	plInstance = this;
 	mManager = ObjectManager::GetInstance();
-	_hp = 100;
+	mHp = 100;
 	//待機状態に
 	mAnimation= ANIMATION::WAIT;
 	//位置初期化
 	mPos = Vector3D(0, 100, 0);
 	//向き初期化
-	mRotation = Vector3D(0, 0, 0);
+	mRotation = Vector3D(0, MyMath::DegToRad(180), 0);
 	//初期アニメーションアタッチ番号設定
 	mAttachNum = 0;
 	//アニメーション登録

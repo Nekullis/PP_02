@@ -14,6 +14,12 @@ CameraComponent::CameraComponent(ObjectBase* owner, int updateowder) : Component
 	mNear = 20;
 	//最長描画距離初期化
 	mFar = 50000;
+	//ばね定数
+	mSpring = 0.1;
+	//減衰定数
+	mDampFactor = 0.8;
+	mCurrentPos = mPos;
+	mCurrentVelocity;
 	//ゲームパッドの取得
 	mPad = GameXPad::GetInstance();
 	mOwner->AddComponent(this);
@@ -50,11 +56,23 @@ void CameraComponent::Update()
 		pos._y += 300;
 		target = Vector3D(mOwner->GetPos()); 
 	}
-	mPos = pos;
+	//mPos = pos;
+	//ばね力計算
+	Vector3D springforce = -mSpring * (mCurrentPos - pos);
+	//減衰力計算
+	Vector3D dampforce = -mDampFactor * mCurrentVelocity;
+	//総合力を計算している
+	Vector3D force = springforce + dampforce;
+	Vector3D accseler = force;
+	//速度更新
+	mCurrentVelocity += accseler;
+	//位置更新
+	mCurrentPos += mCurrentVelocity;
+	mPos = mCurrentPos;
 	//カメラ描写の最短距離、最長距離を設定する
 	SetCameraNearFar(mNear, mFar);
 	//カメラの位置と注視点を反映する
-	SetCameraPositionAndTarget_UpVecY(pos.dxl(), target.dxl());
+	SetCameraPositionAndTarget_UpVecY(mCurrentPos.dxl(), target.dxl());
 }
 
 

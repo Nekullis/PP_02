@@ -5,7 +5,7 @@ Stage* Stage::stageInstance = nullptr;
 Stage::Stage(ModeBase* game):ObjectBase(game)
 {
 	stageInstance = this;
-	mPos = Vector3D(0, -10, 0);
+	mPos = Vector3D(0, -100, 0);
 	mRotation = Vector3D(0, 0, 0);
 	mManager = ObjectManager::GetInstance();
 	//ステージ描画用コンポーネント初期化

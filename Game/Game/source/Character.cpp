@@ -2,7 +2,7 @@
 
 Character::Character(ModeBase* game):base(game)
 {
-	_hp = 0;
+	mHp = 0;
 	mAttachNum = 0;
 }
 
@@ -23,6 +23,7 @@ void Character::RegisterAnimation()
 void Character::Process()
 {
 	base::Process();
+	mPos._y = 100;
 }
 
 void Character::Render()

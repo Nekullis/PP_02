@@ -1,16 +1,22 @@
+#include "ModeGame.h"
 #include "EnemyMob.h"
 #include "DrawComponent.h"
 #include "ObjectManager.h"
 #include "AIComponent.h"
 #include "CapsuleColComponent.h"
+#include "DamageEffect.h"
+#include "CollisionManager.h"
 
 EnemyMob::EnemyMob(ModeBase* game) :Enemy(game)
 {
 	mManager = ObjectManager::GetInstance();
 	//体力設定
-	_hp = 50;
+	mHp = 20;
 	//待機状態に
 	mAnimation = ANIMATION::WAIT;
+	mIsDamage = false;
+	mIsDead = false;
+	mDamageCnt = 0;
 
 	//描画用コンポーネント追加
 	//描画用コンポーネント初期化
@@ -75,6 +81,13 @@ void EnemyMob::Process()
 		case ANIMATION::WALK:
 			mAnimAttachIndex = MV1AttachAnim(mAnimHandle, 7, -1, false);
 			break;
+			//ダメージ
+		case ANIMATION::DAMAGE:
+			mAnimAttachIndex = MV1AttachAnim(mAnimHandle, 3, -1, false);
+			break;
+		case ANIMATION::DEAD:
+			mAnimAttachIndex = MV1AttachAnim(mAnimHandle, 4, -1, false);
+			break;
 		}
 		//再生時間リセット
 		mAnimPlayTime = 0;
@@ -84,13 +97,55 @@ void EnemyMob::Process()
 	//アニメーションカウント加算
 	mAnimPlayTime += 1.0f;
 	//総再生時間に到達したらリセット
-	if(mAnimPlayTime >= mAnimTotalTime) { mAnimPlayTime = 0.0f; }
+	if(mAnimPlayTime >= mAnimTotalTime) 
+	{ 
+		mAnimPlayTime = (mIsDead) ? mAnimTotalTime : 0;
+		if (mIsDead)
+		{
+			ModeGame::GetInstance()->SetClearFlag(true);
+		}
+	}
 	//現再生時間をセット
 	MV1SetAttachAnimTime(mAnimHandle, mAnimAttachIndex, mAnimPlayTime);
 	oldAnimation = mAnimation;
+	if (mIsDamage)
+	{
+		mDamageCnt++;
+		if (!mIsDead)
+		{
+			if (mDamageCnt >= 20)
+			{
+				mAnimation = ANIMATION::WAIT;
+				mIsDamage = false;
+				mDamageCnt = 0;
+			}
+		}
+	}
 }
 
 void EnemyMob::Render()
 {
 	Enemy::Render();
+}
+
+void EnemyMob::Damage(Vector3D pos)
+{
+	if (!mIsDamage)
+	{
+		DamageEffect* effect = new DamageEffect(ModeGame::GetInstance());
+		effect->SetPos(CollisionManager::GetInstance()->GetHitPos());
+		effect->Start(50);
+		Enemy::Damage(pos);
+		mAnimation = (mHp > 0) ? ANIMATION::DAMAGE : ANIMATION::DEAD;
+		mIsDead = (mHp > 0) ? false : true;
+		Vector3D v = mPos - pos;
+		Vector3D norm = v.Normalize();
+		double len = -5;
+		Vector3D scale = norm.Scale(len);
+		mPos += scale;
+		float tan = atan2(norm._z, norm._x);
+		mRotation._y = MyMath::DegToRad(tan);
+		mIsDamage = true;
+	}
+	
 }

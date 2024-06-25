@@ -13,14 +13,14 @@ public:
 	Character(ModeBase* game);
 	virtual ~Character();
 	virtual void RegisterAnimation();
-	void Process()override;
-	void Render()override;
+	virtual void Process()override;
+	virtual void Render()override;
 	//ゲッター
-	int GetHP() const { return _hp; }
+	int GetHP() const { return mHp; }
 	//セッター
 protected:
 	//体力
-	int _hp;
+	int mHp;
 	//アニメーション関連
 	int mAnimHandle;
 	int mAnimAttachIndex;
