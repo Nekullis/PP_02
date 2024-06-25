@@ -52,6 +52,7 @@ void DamageEffect::Process()
 	if (mNowPlayTime > mPlayTotalTime)
 	{ 
 		mUseFlag = false;
+		mParticleList.clear();
 		return;
 	}
 	for (auto&& particle : mParticleList)
@@ -60,7 +61,7 @@ void DamageEffect::Process()
 		particle.Pos._y += particle.Velocity._y * 0.5;
 		particle.Pos._z += particle.Velocity._z * 0.5;
 	}
-	int alpha = 255 * ((mPlayTotalTime - mNowPlayTime) / mPlayTotalTime);
+	int alpha = (mPlayTotalTime > 0) ? 255 * ((mPlayTotalTime - mNowPlayTime) / mPlayTotalTime) : 0;
 	std::vector<VERTEX3D> vertices;
 	std::vector<unsigned short> index;
 	for (auto&& particle : mParticleList)

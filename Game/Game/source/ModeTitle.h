@@ -9,5 +9,7 @@ public:
 	virtual bool Terminate();
 	virtual bool Process();
 	virtual bool Render();
+protected:
+	int mHandle;
 };
 

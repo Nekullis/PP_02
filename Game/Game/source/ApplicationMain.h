@@ -13,6 +13,6 @@ public:
 	bool Render();
 protected:
 	//‰Šú‰»
-	//std::thread* _init;
+	std::thread* _init;
 };
 
