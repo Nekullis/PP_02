@@ -6,6 +6,7 @@
 #include "CapsuleColComponent.h"
 #include "DamageEffect.h"
 #include "CollisionManager.h"
+#include "ApplicationGlobal.h"
 
 EnemyMob::EnemyMob(ModeBase* game) :Enemy(game)
 {
@@ -132,6 +133,13 @@ void EnemyMob::Damage(Vector3D pos)
 {
 	if (!mIsDamage)
 	{
+		//SoundItemBase* snditem_se = _global.mSndServer.Get("SE_Damage");
+		//snditem_se->SetVolume(200);
+		//if (snditem_se && snditem_se->IsLoad())
+		//{
+		//	// Ä¶‚·‚é
+		//	snditem_se->Play();
+		//}
 		DamageEffect* effect = new DamageEffect(ModeGame::GetInstance());
 		effect->SetPos(CollisionManager::GetInstance()->GetHitPos());
 		effect->Start(50);

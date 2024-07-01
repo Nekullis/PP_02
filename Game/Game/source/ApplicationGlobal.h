@@ -9,6 +9,7 @@ public:
 	//‰Šú‰»
 	bool Init();
 	class ResourceManager* mResManager;
+	//class SoundServer mSndServer;
 	class GameXPad* mPad;
 	//ƒ[ƒh‚Å‚«‚Ä‚¢‚é‚©
 	bool _isLoad;
